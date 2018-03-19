@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+    Welcome
+
+    <table>
+       
+        <tr><td>Username: </td> <td><input type="text" name="name" id="name" placeholder="name" [(ngModel)]="user.Name" ngModel><br> </td></tr>
+        <tr><td>Password: </td><td><input type="text" name="name" id="password" placeholder="password" [(ngModel)]="user.Password" ngModel><br></td></tr>
+       
+        <tr><td><input type="button"  (click)="Login()" value="Login"></td></tr>
+    </table>
+
+   
+</body>
+</html>
+
+<script>
+    $(document).ready(function () { alert("oké") });
+</script>
+<script src="../../../Controllers/JavaScript.js"></script>
