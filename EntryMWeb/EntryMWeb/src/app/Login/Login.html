@@ -4,17 +4,51 @@
 </head>
 <body>
 
-    Welcome
+    <!--Welcome-->
+    <!--<table>
 
-    <table>
-       
         <tr><td>Username: </td> <td><input type="text" name="name" id="name" placeholder="name" [(ngModel)]="user.Name" ngModel><br> </td></tr>
         <tr><td>Password: </td><td><input type="text" name="name" id="password" placeholder="password" [(ngModel)]="user.Password" ngModel><br></td></tr>
-       
-        <tr><td><input type="button"  (click)="Login()" value="Login"></td></tr>
-    </table>
 
-   
+        <tr><td><input type="button" (click)="Login()" value="Login"></td></tr>
+
+        <tr><td><button (click)="Login()" mat-button>Login</button></td></tr>
+    </table>-->
+    <table class="login-form" align="center">
+        <tr>
+            <td align="center">
+                <mat-form-field class="fieldStlye">
+                    <input matInput placeholder="Name">
+                </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="center">
+                <mat-form-field class="fieldStlye">
+                    <input matInput placeholder="Password">
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <button (click)="Login()" mat-button>Login</button>
+            </td>
+        </tr>
+    </table>
+    <!--<form class="">
+        <mat-form-field class="fieldStlye">
+            <input matInput placeholder="Name">
+        </mat-form-field>
+
+        <mat-form-field class="fieldStlye">
+            <input matInput placeholder="Password" >
+        </mat-form-field>
+
+
+    </form>-->
+
+
 </body>
 </html>
 
@@ -22,3 +56,4 @@
     $(document).ready(function () { alert("oké") });
 </script>
 <script src="../../../Controllers/JavaScript.js"></script>
+<link href="/node_modules/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
