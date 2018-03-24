@@ -10,6 +10,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var Login_component_1 = require("./Login/Login.component");
+var Members_component_1 = require("./Members/Members.component");
 var forms_1 = require("@angular/forms");
 var animations_1 = require("@angular/platform-browser/animations");
 var animations_2 = require("@angular/platform-browser/animations");
@@ -17,9 +18,8 @@ var animations_2 = require("@angular/platform-browser/animations");
 //import { MatButtonModule } from '@angular/material';
 var router_1 = require("@angular/router");
 var http_1 = require("@angular/http");
-//import { MatListModule } from '@angular/material/list';
-//import "~@angular/material/prebuilt-themes/indigo-pink.css";
 var material_1 = require("@angular/material");
+var material_2 = require("@angular/material");
 var AppModule = /** @class */ (function () {
     //@NgModule({
     //    imports: [
@@ -50,27 +50,29 @@ var AppModule = /** @class */ (function () {
                 http_1.HttpModule,
                 animations_1.BrowserAnimationsModule,
                 animations_2.NoopAnimationsModule,
-                material_1.MatButtonModule,
-                material_1.MatMenuModule,
-                material_1.MatToolbarModule,
-                material_1.MatIconModule,
-                material_1.MatCardModule,
-                material_1.MatFormFieldModule,
-                material_1.MatInputModule,
+                material_2.MatButtonModule,
+                material_2.MatMenuModule,
+                material_2.MatToolbarModule,
+                material_2.MatIconModule,
+                material_2.MatCardModule,
+                material_2.MatFormFieldModule,
+                material_2.MatInputModule,
+                material_1.MatTableModule,
                 router_1.RouterModule.forRoot([
                     { path: "", component: Login_component_1.LoginComponent },
+                    { path: "", component: Members_component_1.MembersComponent }
                 ])
             ],
             exports: [
-                material_1.MatButtonModule,
-                material_1.MatMenuModule,
-                material_1.MatToolbarModule,
-                material_1.MatIconModule,
-                material_1.MatCardModule,
-                material_1.MatInputModule,
-                material_1.MatFormFieldModule,
+                material_2.MatButtonModule,
+                material_2.MatMenuModule,
+                material_2.MatToolbarModule,
+                material_2.MatIconModule,
+                material_2.MatCardModule,
+                material_2.MatInputModule,
+                material_2.MatFormFieldModule,
             ],
-            declarations: [app_component_1.AppComponent, Login_component_1.LoginComponent],
+            declarations: [app_component_1.AppComponent, Login_component_1.LoginComponent, Members_component_1.MembersComponent],
             bootstrap: [app_component_1.AppComponent]
         })
         //@NgModule({

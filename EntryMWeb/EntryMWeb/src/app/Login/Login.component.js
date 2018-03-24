@@ -19,8 +19,13 @@ var LoginComponent = /** @class */ (function () {
         this.http = http;
         this.user = { Name: "", Password: "" };
     }
-    LoginComponent.prototype.Login = function () {
+    LoginComponent.prototype.Login = function (name, password) {
+        //let headers = new Headers();
+        //headers.append('Content-Type', 'application/json');
+        //headers.append('UserName', name);
+        //headers.append('Password', password);
         var _this = this;
+        //  let params = new HttpParams().set("UserName", name).set("Password", password);
         var url = "../../../api/user/CheckUserAutenthication";
         this.http.get(url)
             .toPromise()

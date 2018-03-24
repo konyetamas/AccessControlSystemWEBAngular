@@ -29,7 +29,7 @@ namespace EntryMWeb.Controllers
 
 
         [HttpGet]
-        public UserModel CheckUserAutenthication()
+        public UserModel CheckUserAutenthication(string Username, string Password)
         {
             UserModel result = new UserModel();
             try

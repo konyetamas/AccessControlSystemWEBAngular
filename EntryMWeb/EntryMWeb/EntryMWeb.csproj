@@ -138,7 +138,13 @@
     <Content Include="src\app\app.component.js" />
     <Content Include="src\app\app.component.spec.js" />
     <Content Include="src\app\app.module.js" />
+    <Content Include="src\app\Entries\Entries.html" />
+    <Content Include="src\app\Entries\EntriesStyle.css" />
     <Content Include="src\app\Login\LoginStyle.css" />
+    <Content Include="src\app\Members\Members.html" />
+    <Content Include="src\app\Members\MembersStyle.css" />
+    <Content Include="src\app\Messages\Messages.html" />
+    <Content Include="src\app\Messages\MessagesStyle.css" />
     <Content Include="src\favicon.ico" />
     <Content Include="src\index.html" />
     <Content Include="src\main.js" />
@@ -243,13 +249,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="src\app\Details\" />
     <Folder Include="View\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\Entries\Entries.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\Entries\Entries.component.ts" />
     <TypeScriptCompile Include="src\app\Login\Login.component.ts" />
+    <TypeScriptCompile Include="src\app\Members\Members.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\Members\Members.component.ts" />
+    <TypeScriptCompile Include="src\app\Messages\Messages.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\Messages\Messages.component.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\app\Login\Login.component.spec.ts" />
   </ItemGroup>

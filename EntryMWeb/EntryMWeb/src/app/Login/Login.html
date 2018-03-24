@@ -18,7 +18,7 @@
         <tr>
             <td align="center">
                 <mat-form-field class="fieldStlye">
-                    <input matInput placeholder="Name">
+                    <input matInput [(ngModel)]="user.Name"  placeholder="Name">
                 </mat-form-field>
             </td>
         </tr>
@@ -26,13 +26,13 @@
         <tr>
             <td align="center">
                 <mat-form-field class="fieldStlye">
-                    <input matInput placeholder="Password">
+                    <input matInput [(ngModel)]="user.Password"  placeholder="Password">
                 </mat-form-field>
             </td>
         </tr>
         <tr>
             <td align="center">
-                <button (click)="Login()" mat-button>Login</button>
+                <button (click)="Login(user.Name, user.Password)" mat-button>Login</button>
             </td>
         </tr>
     </table>

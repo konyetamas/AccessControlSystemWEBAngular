@@ -14,8 +14,15 @@ export class LoginComponent {
     user: object = {Name:"", Password:""};
 
 
-    Login() {
-        const url ="../../../api/user/CheckUserAutenthication";
+    Login(name: string, password: string) {
+       
+        //let headers = new Headers();
+        //headers.append('Content-Type', 'application/json');
+        //headers.append('UserName', name);
+        //headers.append('Password', password);
+
+      //  let params = new HttpParams().set("UserName", name).set("Password", password);
+        const url = "../../../api/user/CheckUserAutenthication";
         this.http.get(url)
             .toPromise()
             .then(() => {

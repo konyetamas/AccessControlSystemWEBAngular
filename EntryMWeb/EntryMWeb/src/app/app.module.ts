@@ -3,6 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Login/Login.component';
+import { MembersComponent } from './Members/Members.component';
+import { MessagesComponent } from './Messages/Messages.component';
+import { EntriesComponent } from './Entries/Entries.component';
+
 import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,8 +20,13 @@ import { CdkTable } from '@angular/cdk/table'
 import { CdkTableModule } from '@angular/cdk/table';
 //import { MatListModule } from '@angular/material/list';
 
+import { Component, ViewChild } from '@angular/core';
+import { MatTableDataSource, MatSort } from '@angular/material';
+import { MatTableModule } from '@angular/material';
+
 //import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+import { HttpParams, HttpClient } from '@angular/common/http';
 
 import {
     MatButtonModule,
@@ -43,8 +52,10 @@ import {
         MatCardModule,
         MatFormFieldModule,
         MatInputModule,
+        MatTableModule,
         RouterModule.forRoot([
             { path: "", component: LoginComponent },
+            { path: "", component: MembersComponent }
 
         ])
     ],
@@ -57,7 +68,7 @@ import {
         MatInputModule,
         MatFormFieldModule,
     ],
-    declarations: [AppComponent, LoginComponent],
+    declarations: [AppComponent, LoginComponent, MembersComponent],
     bootstrap: [AppComponent]
 })
 
