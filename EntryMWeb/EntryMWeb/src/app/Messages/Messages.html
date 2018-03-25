@@ -7,29 +7,33 @@
 <body>
     <div class="example-container mat-elevation-z8">
         <mat-table #table [dataSource]="dataSource" matSort>
-
             <!-- Position Column -->
-            <ng-container matColumnDef="position">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> No. </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+            <ng-container matColumnDef="Id">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Id </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.Id}} </mat-cell>
             </ng-container>
 
             <!-- Name Column -->
-            <ng-container matColumnDef="name">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            <ng-container matColumnDef="Subject">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Subject </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.Subject}} </mat-cell>
             </ng-container>
 
             <!-- Weight Column -->
-            <ng-container matColumnDef="weight">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Weight </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+            <ng-container matColumnDef="Text">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Text </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.Text}} </mat-cell>
             </ng-container>
 
             <!-- Symbol Column -->
-            <ng-container matColumnDef="symbol">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Symbol </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+            <ng-container matColumnDef="Date">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Date </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.Date}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="CompanyName">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Company name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.CompanyName}} </mat-cell>
             </ng-container>
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

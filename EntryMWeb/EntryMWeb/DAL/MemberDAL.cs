@@ -81,6 +81,8 @@ namespace EntryMWeb.DAL
             memberModel.Id = memberDataBase.Id;
             memberModel.CardNumber = memberDataBase.CardNumber;
             memberModel.Title = memberDataBase.Title;
+            memberModel.FirstName = memberDataBase.FirstName;
+            memberModel.LastName = memberDataBase.LastName;
             memberModel.CompanyName = (from x in context.Members
                                        where x.Id == memberModel.Id
                                        from y in context.Companies

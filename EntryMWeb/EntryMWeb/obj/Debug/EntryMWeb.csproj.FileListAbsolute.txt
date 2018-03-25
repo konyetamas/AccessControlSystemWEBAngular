@@ -87,3 +87,4 @@ C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\bin
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\bin\System.Web.Http.WebHost.xml
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\obj\Debug\EntryMWeb.dll
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\obj\Debug\EntryMWeb.pdb
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\obj\Debug\EntryMWeb.csprojResolveAssemblyReference.cache

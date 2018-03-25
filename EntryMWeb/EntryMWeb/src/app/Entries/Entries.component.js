@@ -14,64 +14,48 @@ var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
 var router_1 = require("@angular/router");
 var material_1 = require("@angular/material");
-var http_2 = require("@angular/common/http");
-var MembersComponent = /** @class */ (function () {
-    function MembersComponent(router, http) {
+var EntriesComponent = /** @class */ (function () {
+    function EntriesComponent(router, http) {
         this.router = router;
         this.http = http;
         this.user = { Name: "", Password: "" };
-        this.displayedColumns = ['Id', 'FirstName', 'LastName', 'Title'];
+        this.displayedColumns = ['Id', 'MemberName', 'EntryDate'];
         this.dataSource = new material_1.MatTableDataSource(this.Items);
     }
-    MembersComponent.prototype.GetMembers = function () {
+    EntriesComponent.prototype.GetEntries = function () {
         var _this = this;
         var myHeaders = new http_1.Headers();
         myHeaders.append('Content-Type', 'application/json');
         myHeaders.append('CompanyId', '1');
-        //let myParams = new URLSearchParams();
-        //myParams.set('CompanyId', '1'); 
-        //headers.append('Password', password);
-        var params = new http_2.HttpParams().set("CompanyId", '1');
-        var url = "../../../api/member/GetMembersByCompany?CompanyId=4";
-        var options = new http_1.RequestOptions({ method: http_1.RequestMethod.Get, headers: myHeaders, params: params });
-        //this.http.get(url)
-        //subscribe(
-        //    (res: Response) => {
-        //        this.products = res.json();
-        //        )
+        var url = "../../../api/member/GetEntriesByCompanyId?CompanyId=4";
         this.http.get(url).subscribe(function (res) {
             _this.Items = res.json();
-            alert(_this.Items);
-            console.log(_this.Items);
         });
-        //.catch(() => { alert("Wrong username or password") })
     };
-    MembersComponent.prototype.ngOnInit = function () {
-        this.GetMembers();
-        alert(this.Items);
-        //this.dataSource = new MatTableDataSource(this.Items);
+    EntriesComponent.prototype.ngOnInit = function () {
+        this.GetEntries();
     };
     __decorate([
         core_1.ViewChild(material_1.MatSort),
         __metadata("design:type", material_1.MatSort)
-    ], MembersComponent.prototype, "sort", void 0);
-    MembersComponent = __decorate([
+    ], EntriesComponent.prototype, "sort", void 0);
+    EntriesComponent = __decorate([
         core_1.Component({
-            selector: 'app-members',
-            templateUrl: './Members.html',
-            styleUrls: ['./MembersStyle.css']
+            selector: 'app-entries',
+            templateUrl: './Entries.html',
+            styleUrls: ['./EntriesStyle.css']
         }),
         __metadata("design:paramtypes", [router_1.Router, http_1.Http])
-    ], MembersComponent);
-    return MembersComponent;
+    ], EntriesComponent);
+    return EntriesComponent;
 }());
-exports.MembersComponent = MembersComponent;
-var Member = /** @class */ (function () {
-    function Member() {
+exports.EntriesComponent = EntriesComponent;
+var Entry = /** @class */ (function () {
+    function Entry() {
     }
-    return Member;
+    return Entry;
 }());
-exports.Member = Member;
+exports.Entry = Entry;
 //const ELEMENT_DATA: Member[] = [
 //    { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
 //    { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
@@ -94,4 +78,4 @@ exports.Member = Member;
 //    { position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K' },
 //    { position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca' },
 //];
-//# sourceMappingURL=Members.component.js.map
+//# sourceMappingURL=Entries.component.js.map

@@ -29,11 +29,13 @@ namespace EntryMWeb.Controllers
         }
 
         [HttpGet]
+        [ActionName("GetMembersByCompany")]
         public List<MemberModel> GetMembersByCompany(int CompanyId)
         {
             List<MemberModel> result = new List<MemberModel>();
             try
             {
+                
                 result = MemberDAL.GetMembersByCompanyId(CompanyId);
             }
             catch (Exception e)
