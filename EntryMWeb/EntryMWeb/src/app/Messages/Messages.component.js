@@ -29,7 +29,7 @@ var MessagesComponent = /** @class */ (function () {
         myHeaders.append('Content-Type', 'application/json');
         myHeaders.append('CompanyId', '1');
         var params = new http_2.HttpParams().set("CompanyId", '1');
-        var url = "../../../api/member/GetMessagesFromBuildingToCompany?CompanyId=4";
+        var url = "../../../api/member/GetMessagesFromBuildingToCompany?CompanyId=" + this.companyId;
         var options = new http_1.RequestOptions({ method: http_1.RequestMethod.Get, headers: myHeaders, params: params });
         this.http.get(url).subscribe(function (res) {
             _this.Items = res.json();
@@ -38,6 +38,10 @@ var MessagesComponent = /** @class */ (function () {
         });
     };
     MessagesComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.sub = this.route.params.subscribe(function (params) {
+            _this.companyId = +params['id'];
+        });
         this.GetMessages();
     };
     __decorate([

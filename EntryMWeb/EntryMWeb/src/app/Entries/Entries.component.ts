@@ -1,7 +1,7 @@
 ﻿import { Component, ViewChild, OnInit } from '@angular/core';
 import { Http, Response, Headers, RequestOptions, RequestMethod } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MatTableDataSource, MatSort } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 import { MatTableModule } from '@angular/material';
@@ -14,7 +14,7 @@ import { HttpParams, HttpClient } from '@angular/common/http';
 })
 export class EntriesComponent implements OnInit {
 
-    constructor(private router: Router, private http: Http) { }
+    constructor(private router: Router, private http: Http, private route: ActivatedRoute) { }
     user: object = { Name: "", Password: "" };
     Items: Array<Entry>;
     companyId: number;

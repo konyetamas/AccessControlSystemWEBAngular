@@ -27,12 +27,16 @@ var EntriesComponent = /** @class */ (function () {
         var myHeaders = new http_1.Headers();
         myHeaders.append('Content-Type', 'application/json');
         myHeaders.append('CompanyId', '1');
-        var url = "../../../api/member/GetEntriesByCompanyId?CompanyId=4";
+        var url = "../../../api/member/GetEntriesByCompanyId?CompanyId=" + this.companyId;
         this.http.get(url).subscribe(function (res) {
             _this.Items = res.json();
         });
     };
     EntriesComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.sub = this.route.params.subscribe(function (params) {
+            _this.companyId = +params['id'];
+        });
         this.GetEntries();
     };
     __decorate([
