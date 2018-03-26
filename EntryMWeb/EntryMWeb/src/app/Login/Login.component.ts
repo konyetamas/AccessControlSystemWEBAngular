@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-    constructor(private http: Http) { }
+    constructor(private http: Http, private router: Router) { }
     user: object = {Name:"", Password:""};
 
 
@@ -21,12 +21,19 @@ export class LoginComponent {
         //headers.append('UserName', name);
         //headers.append('Password', password);
 
-      //  let params = new HttpParams().set("UserName", name).set("Password", password);
-        const url = "../../../api/user/CheckUserAutenthication";
+        //  let params = new HttpParams().set("UserName", name).set("Password", password);
+        const url = "../../../api/user/CheckUserAutenthication?UserName=" + name + "&Password=" + password;
         this.http.get(url)
             .toPromise()
-            .then(() => {
-               // this.router.navigate(['/']);
+            .then(response => {
+                if (response != null) {
+                   
+                    this.router.navigate(['home']);
+                }
+                else {
+                    alert("Wrong username or password") 
+                }
+
             })
             .catch(() => { alert("Wrong username or password") })
     }

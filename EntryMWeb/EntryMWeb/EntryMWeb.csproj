@@ -128,7 +128,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\DarkStyle.css" />
-    <Content Include="Controllers\JavaScript.js" />
     <Content Include="DB\AccessControlSystemModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>AccessControlSystemModel.edmx</DependentUpon>
@@ -179,18 +178,24 @@
     <Content Include="scripts\umd\popper.min.js" />
     <Content Include="src\app\app.component.js" />
     <Content Include="src\app\app.component.spec.js" />
+    <Content Include="src\app\App.html" />
     <Content Include="src\app\app.module.js" />
     <Content Include="src\app\Entries\Entries.html" />
     <Content Include="src\app\Entries\EntriesStyle.css" />
     <Content Include="src\app\Home\Home.html" />
     <Content Include="src\app\Home\HomeStyle.css" />
+    <Content Include="src\app\Nav\Nav.html" />
+    <Content Include="src\app\Nav\NavStyle.css" />
     <Content Include="src\app\Login\LoginStyle.css" />
     <Content Include="src\app\Members\Members.html" />
     <Content Include="src\app\Members\MembersStyle.css" />
     <Content Include="src\app\Messages\Messages.html" />
     <Content Include="src\app\Messages\MessagesStyle.css" />
+    <Content Include="src\app\StartPage\StartPage.html" />
+    <Content Include="src\app\StartPage\StartPageStyle.css" />
     <Content Include="src\favicon.ico" />
     <Content Include="src\index.html" />
+    <Content Include="src\Index2.html" />
     <Content Include="src\main.js" />
     <Content Include="src\styles.css" />
     <Content Include="src\systemjs-angular-loader.js" />
@@ -316,11 +321,15 @@
     <TypeScriptCompile Include="src\app\Entries\Entries.component.ts" />
     <TypeScriptCompile Include="src\app\Home\Home.component.spec.ts" />
     <TypeScriptCompile Include="src\app\Home\Home.component.ts" />
+    <TypeScriptCompile Include="src\app\Nav\Nav.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\Nav\Nav.component.ts" />
     <TypeScriptCompile Include="src\app\Login\Login.component.ts" />
     <TypeScriptCompile Include="src\app\Members\Members.component.spec.ts" />
     <TypeScriptCompile Include="src\app\Members\Members.component.ts" />
     <TypeScriptCompile Include="src\app\Messages\Messages.component.spec.ts" />
     <TypeScriptCompile Include="src\app\Messages\Messages.component.ts" />
+    <TypeScriptCompile Include="src\app\StartPage\StartPage.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\StartPage\StartPage.component.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\app\Login\Login.component.spec.ts" />
   </ItemGroup>

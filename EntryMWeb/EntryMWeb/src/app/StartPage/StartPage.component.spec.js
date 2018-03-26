@@ -1,18 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var testing_1 = require("@angular/core/testing");
-var Home_component_1 = require("./Home.component");
-describe('LoginComponent', function () {
+var StartPage_component_1 = require("./StartPage.component");
+describe('NavComponent', function () {
     var component;
     var fixture;
     beforeEach(testing_1.async(function () {
         testing_1.TestBed.configureTestingModule({
-            declarations: [Home_component_1.HomeComponent]
+            declarations: [StartPage_component_1.StartPageComponent]
         })
             .compileComponents();
     }));
     beforeEach(function () {
-        fixture = testing_1.TestBed.createComponent(Home_component_1.HomeComponent);
+        fixture = testing_1.TestBed.createComponent(StartPage_component_1.StartPageComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });
@@ -20,4 +20,4 @@ describe('LoginComponent', function () {
         expect(component).toBeTruthy();
     });
 });
-//# sourceMappingURL=Home.component.spec.js.map
+//# sourceMappingURL=StartPage.component.spec.js.map

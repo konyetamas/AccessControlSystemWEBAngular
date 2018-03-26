@@ -17,10 +17,34 @@ var AppComponent = /** @class */ (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<app-home>",
+            template: " <app-startpage></app-startpage>",
         })
     ], AppComponent);
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
+//export const routerConfig: Routes = [
+//    {
+//        path: 'home',
+//        component: HomeComponent
+//    },
+//    {
+//        path: 'home/messages',
+//        component: MessagesComponent
+//    },
+//    {
+//        path: 'home/members',
+//        component: MembersComponent,
+//    },
+//    {
+//        path: '',
+//        redirectTo: '/home',
+//        pathMatch: 'full'
+//    },
+//    {
+//        path: '**',
+//        redirectTo: '/home',
+//        pathMatch: 'full'
+//    }
+//];
 //# sourceMappingURL=app.component.js.map

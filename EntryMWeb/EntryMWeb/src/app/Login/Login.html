@@ -1,4 +1,6 @@
 ﻿<!DOCTYPE html>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/darkly/bootstrap.css" rel="stylesheet">
 <html>
 <head>
 </head>
@@ -14,7 +16,7 @@
 
         <tr><td><button (click)="Login()" mat-button>Login</button></td></tr>
     </table>-->
-    <table class="login-form" align="center">
+    <table class="login-form" align="center" id="LoginConatiner">
         <tr>
             <td align="center">
                 <mat-form-field class="fieldStlye">
@@ -47,7 +49,7 @@
 
 
     </form>-->
-
+    <router-outlet></router-outlet>
 
 </body>
 </html>
@@ -55,5 +57,5 @@
 <script>
     $(document).ready(function () { alert("oké") });
 </script>
-<script src="../../../Controllers/JavaScript.js"></script>
+<script src="../../../scripts/jquery-3.0.0.min.js"></script>
 <link href="/node_modules/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">

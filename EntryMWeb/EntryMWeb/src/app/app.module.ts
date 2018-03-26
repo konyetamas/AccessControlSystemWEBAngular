@@ -6,8 +6,9 @@ import { LoginComponent } from './Login/Login.component';
 import { MembersComponent } from './Members/Members.component';
 import { MessagesComponent } from './Messages/Messages.component';
 import { EntriesComponent } from './Entries/Entries.component';
+import { NavComponent } from './Nav/Nav.component';
 import { HomeComponent } from './Home/Home.component';
-
+import { StartPageComponent } from './StartPage/StartPage.component';
 
 import { FormsModule } from '@angular/forms';
 
@@ -55,11 +56,23 @@ import {
         MatFormFieldModule,
         MatInputModule,
         MatTableModule,
-        RouterModule.forRoot([            
-            { path: "members", component: MembersComponent },
-            { path: "messages", component: MessagesComponent },
-            { path: "entries", component: EntriesComponent },
-            { path: "home", component: HomeComponent }
+        RouterModule.forRoot([
+            { path: "login", component: LoginComponent },                               
+              { path: "home", component: HomeComponent,
+                children: [{
+                    path: 'members',
+                    component: MembersComponent
+                },
+                {
+                    path: 'entries',
+                    component: EntriesComponent
+                },
+                {
+                    path: 'messages',
+                    component: MessagesComponent
+                }]
+            }           
+
 
         ])
     ],
@@ -72,7 +85,7 @@ import {
         MatInputModule,
         MatFormFieldModule,
     ],
-    declarations: [AppComponent,HomeComponent, LoginComponent, MembersComponent, MessagesComponent, EntriesComponent ],
+    declarations: [AppComponent, StartPageComponent, HomeComponent, NavComponent, LoginComponent, MembersComponent, MessagesComponent, EntriesComponent],
     bootstrap: [AppComponent]
 })
 

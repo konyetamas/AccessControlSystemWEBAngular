@@ -13,20 +13,26 @@ var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
 var router_1 = require("@angular/router");
-var HomeComponent = /** @class */ (function () {
-    function HomeComponent(http, router) {
+var StartPageComponent = /** @class */ (function () {
+    function StartPageComponent(http, router) {
         this.http = http;
         this.router = router;
     }
-    HomeComponent = __decorate([
+    StartPageComponent.prototype.Navigate = function () {
+        this.router.navigate(['login']);
+    };
+    StartPageComponent.prototype.ngOnInit = function () {
+        this.Navigate();
+    };
+    StartPageComponent = __decorate([
         core_1.Component({
-            selector: 'app-home',
-            templateUrl: './Home.html',
-            styleUrls: ['./HomeStyle.css']
+            selector: 'app-startpage',
+            templateUrl: './StartPage.html',
+            styleUrls: ['./StartPageStyle.css']
         }),
         __metadata("design:paramtypes", [http_1.Http, router_1.Router])
-    ], HomeComponent);
-    return HomeComponent;
+    ], StartPageComponent);
+    return StartPageComponent;
 }());
-exports.HomeComponent = HomeComponent;
-//# sourceMappingURL=Home.component.js.map
+exports.StartPageComponent = StartPageComponent;
+//# sourceMappingURL=StartPage.component.js.map

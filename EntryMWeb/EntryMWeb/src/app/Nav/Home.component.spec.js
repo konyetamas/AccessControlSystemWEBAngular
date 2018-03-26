@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var testing_1 = require("@angular/core/testing");
 var Home_component_1 = require("./Home.component");
-describe('LoginComponent', function () {
+describe('HomeComponent', function () {
     var component;
     var fixture;
     beforeEach(testing_1.async(function () {

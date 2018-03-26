@@ -13,7 +13,9 @@ var Login_component_1 = require("./Login/Login.component");
 var Members_component_1 = require("./Members/Members.component");
 var Messages_component_1 = require("./Messages/Messages.component");
 var Entries_component_1 = require("./Entries/Entries.component");
+var Nav_component_1 = require("./Nav/Nav.component");
 var Home_component_1 = require("./Home/Home.component");
+var StartPage_component_1 = require("./StartPage/StartPage.component");
 var forms_1 = require("@angular/forms");
 var animations_1 = require("@angular/platform-browser/animations");
 var animations_2 = require("@angular/platform-browser/animations");
@@ -62,10 +64,21 @@ var AppModule = /** @class */ (function () {
                 material_2.MatInputModule,
                 material_1.MatTableModule,
                 router_1.RouterModule.forRoot([
-                    { path: "members", component: Members_component_1.MembersComponent },
-                    { path: "messages", component: Messages_component_1.MessagesComponent },
-                    { path: "entries", component: Entries_component_1.EntriesComponent },
-                    { path: "home", component: Home_component_1.HomeComponent }
+                    { path: "login", component: Login_component_1.LoginComponent },
+                    { path: "home", component: Home_component_1.HomeComponent,
+                        children: [{
+                                path: 'members',
+                                component: Members_component_1.MembersComponent
+                            },
+                            {
+                                path: 'entries',
+                                component: Entries_component_1.EntriesComponent
+                            },
+                            {
+                                path: 'messages',
+                                component: Messages_component_1.MessagesComponent
+                            }]
+                    }
                 ])
             ],
             exports: [
@@ -77,7 +90,7 @@ var AppModule = /** @class */ (function () {
                 material_2.MatInputModule,
                 material_2.MatFormFieldModule,
             ],
-            declarations: [app_component_1.AppComponent, Home_component_1.HomeComponent, Login_component_1.LoginComponent, Members_component_1.MembersComponent, Messages_component_1.MessagesComponent, Entries_component_1.EntriesComponent],
+            declarations: [app_component_1.AppComponent, StartPage_component_1.StartPageComponent, Home_component_1.HomeComponent, Nav_component_1.NavComponent, Login_component_1.LoginComponent, Members_component_1.MembersComponent, Messages_component_1.MessagesComponent, Entries_component_1.EntriesComponent],
             bootstrap: [app_component_1.AppComponent]
         })
         //@NgModule({
