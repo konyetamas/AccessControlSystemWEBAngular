@@ -2,7 +2,7 @@
 
 import { EntriesComponent } from './Entries.component';
 
-describe('MembersComponent', () => {
+describe('EntriesComponent', () => {
     let component: EntriesComponent;
     let fixture: ComponentFixture<EntriesComponent>;
 

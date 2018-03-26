@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-    constructor(private router: Router, private http: Http) { }
+    constructor(private http: Http) { }
     user: object = {Name:"", Password:""};
 
 
@@ -26,7 +26,7 @@ export class LoginComponent {
         this.http.get(url)
             .toPromise()
             .then(() => {
-                this.router.navigate(['/']);
+               // this.router.navigate(['/']);
             })
             .catch(() => { alert("Wrong username or password") })
     }

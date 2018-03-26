@@ -1,4 +1,4 @@
-import { NgModule }      from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -6,6 +6,8 @@ import { LoginComponent } from './Login/Login.component';
 import { MembersComponent } from './Members/Members.component';
 import { MessagesComponent } from './Messages/Messages.component';
 import { EntriesComponent } from './Entries/Entries.component';
+import { HomeComponent } from './Home/Home.component';
+
 
 import { FormsModule } from '@angular/forms';
 
@@ -36,7 +38,7 @@ import {
     MatCardModule,
     MatInputModule,
     MatSelectModule,
-    MatFormFieldModule,    
+    MatFormFieldModule,
 } from '@angular/material';
 
 @NgModule({
@@ -53,9 +55,11 @@ import {
         MatFormFieldModule,
         MatInputModule,
         MatTableModule,
-        RouterModule.forRoot([
-            { path: "", component: LoginComponent },
-            { path: "", component: MembersComponent }
+        RouterModule.forRoot([            
+            { path: "members", component: MembersComponent },
+            { path: "messages", component: MessagesComponent },
+            { path: "entries", component: EntriesComponent },
+            { path: "home", component: HomeComponent }
 
         ])
     ],
@@ -68,7 +72,7 @@ import {
         MatInputModule,
         MatFormFieldModule,
     ],
-    declarations: [AppComponent, LoginComponent, MembersComponent],
+    declarations: [AppComponent,HomeComponent, LoginComponent, MembersComponent, MessagesComponent, EntriesComponent ],
     bootstrap: [AppComponent]
 })
 
@@ -87,7 +91,7 @@ import {
 //      // MatCheckboxModule,
 //        RouterModule.forRoot([
 //            { path: "", component: LoginComponent },
-            
+
 //        ])
 //    ],
 //    declarations: [AppComponent, LoginComponent],

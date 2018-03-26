@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  template: `<app-members> </app-members>`,
+  template: `<app-home>`,
 })
 export class AppComponent  { name = 'Angular'; }

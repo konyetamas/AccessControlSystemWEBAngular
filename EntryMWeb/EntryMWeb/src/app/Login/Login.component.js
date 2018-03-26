@@ -12,10 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
-var router_1 = require("@angular/router");
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(router, http) {
-        this.router = router;
+    function LoginComponent(http) {
         this.http = http;
         this.user = { Name: "", Password: "" };
     }
@@ -24,13 +22,12 @@ var LoginComponent = /** @class */ (function () {
         //headers.append('Content-Type', 'application/json');
         //headers.append('UserName', name);
         //headers.append('Password', password);
-        var _this = this;
         //  let params = new HttpParams().set("UserName", name).set("Password", password);
         var url = "../../../api/user/CheckUserAutenthication";
         this.http.get(url)
             .toPromise()
             .then(function () {
-            _this.router.navigate(['/']);
+            // this.router.navigate(['/']);
         })
             .catch(function () { alert("Wrong username or password"); });
     };
@@ -40,7 +37,7 @@ var LoginComponent = /** @class */ (function () {
             templateUrl: './Login.html',
             styleUrls: ['./LoginStyle.css']
         }),
-        __metadata("design:paramtypes", [router_1.Router, http_1.Http])
+        __metadata("design:paramtypes", [http_1.Http])
     ], LoginComponent);
     return LoginComponent;
 }());

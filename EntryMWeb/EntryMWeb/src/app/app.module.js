@@ -11,6 +11,9 @@ var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var Login_component_1 = require("./Login/Login.component");
 var Members_component_1 = require("./Members/Members.component");
+var Messages_component_1 = require("./Messages/Messages.component");
+var Entries_component_1 = require("./Entries/Entries.component");
+var Home_component_1 = require("./Home/Home.component");
 var forms_1 = require("@angular/forms");
 var animations_1 = require("@angular/platform-browser/animations");
 var animations_2 = require("@angular/platform-browser/animations");
@@ -59,8 +62,10 @@ var AppModule = /** @class */ (function () {
                 material_2.MatInputModule,
                 material_1.MatTableModule,
                 router_1.RouterModule.forRoot([
-                    { path: "", component: Login_component_1.LoginComponent },
-                    { path: "", component: Members_component_1.MembersComponent }
+                    { path: "members", component: Members_component_1.MembersComponent },
+                    { path: "messages", component: Messages_component_1.MessagesComponent },
+                    { path: "entries", component: Entries_component_1.EntriesComponent },
+                    { path: "home", component: Home_component_1.HomeComponent }
                 ])
             ],
             exports: [
@@ -72,7 +77,7 @@ var AppModule = /** @class */ (function () {
                 material_2.MatInputModule,
                 material_2.MatFormFieldModule,
             ],
-            declarations: [app_component_1.AppComponent, Login_component_1.LoginComponent, Members_component_1.MembersComponent],
+            declarations: [app_component_1.AppComponent, Home_component_1.HomeComponent, Login_component_1.LoginComponent, Members_component_1.MembersComponent, Messages_component_1.MessagesComponent, Entries_component_1.EntriesComponent],
             bootstrap: [app_component_1.AppComponent]
         })
         //@NgModule({
