@@ -1,7 +1,7 @@
 ﻿import { Component, ViewChild, OnInit } from '@angular/core';
 import { Http, Response, Headers, RequestOptions, RequestMethod } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MatTableDataSource, MatSort } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 import { MatTableModule } from '@angular/material';
@@ -14,9 +14,13 @@ import { HttpParams, HttpClient } from '@angular/common/http';
 })
 export class MembersComponent implements OnInit {
 
-    constructor(private router: Router, private http: Http) { }
+    constructor(private router: Router, private http: Http, private route: ActivatedRoute) { }
     user: object = { Name: "", Password: "" };
     Items: Array<Member>;
+    companyId: number;
+    private sub: any;
+
+
 
     displayedColumns = ['Id', 'FirstName', 'LastName', 'Title'];
     dataSource = new MatTableDataSource(this.Items);
@@ -30,7 +34,7 @@ export class MembersComponent implements OnInit {
         myHeaders.append('CompanyId', '1');
 
         let params = new HttpParams().set("CompanyId", '1');
-        const url = "../../../api/member/GetMembersByCompany?CompanyId=4";
+        const url = "../../../api/member/GetMembersByCompany?CompanyId=" + this.companyId;
 
         let options = new RequestOptions({ method: RequestMethod.Get, headers: myHeaders, params: params });
         this.http.get(url).subscribe(
@@ -42,8 +46,14 @@ export class MembersComponent implements OnInit {
            
     }
 
-    ngOnInit() {     
-        this.GetMembers();
+
+   
+
+    ngOnInit() {  
+        this.sub = this.route.params.subscribe(params => {
+            this.companyId = +params['id'];
+        });   
+        this.GetMembers();   
     }
 
 }

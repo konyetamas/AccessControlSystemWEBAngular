@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
     constructor(private http: Http, private router: Router) { }
-    user: object = {Name:"", Password:""};
-
+    user: object = { Name: "", Password: "" };
+    id: number;
 
     Login(name: string, password: string) {
        
@@ -25,10 +25,12 @@ export class LoginComponent {
         const url = "../../../api/user/CheckUserAutenthication?UserName=" + name + "&Password=" + password;
         this.http.get(url)
             .toPromise()
-            .then(response => {
+            .then((response: Response) => {
                 if (response != null) {
-                   
-                    this.router.navigate(['home']);
+                    // this.id = response.json;
+
+                    this.id = response.json();
+                    this.router.navigate(['home', this.id]);
                 }
                 else {
                     alert("Wrong username or password") 

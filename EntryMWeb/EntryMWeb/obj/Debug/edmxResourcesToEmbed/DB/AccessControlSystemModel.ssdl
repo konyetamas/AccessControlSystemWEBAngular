@@ -74,6 +74,7 @@
     <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
     <Property Name="Role" Type="int" Nullable="false" />
     <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CompanyId" Type="int" />
   </EntityType>
   <Association Name="FK_Entry_Entry">
     <End Role="Member" Type="Self.Member" Multiplicity="1" />
@@ -135,6 +136,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_User_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="AccessControlSystemModelStoreContainer">
     <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Entry" EntityType="Self.Entry" Schema="dbo" store:Type="Tables" />
@@ -163,6 +176,10 @@
     <AssociationSet Name="FK_MessagesOfCompanies_MessageFromBuilding" Association="Self.FK_MessagesOfCompanies_MessageFromBuilding">
       <End Role="MessageFromBuilding" EntitySet="MessageFromBuilding" />
       <End Role="MessagesOfCompanies" EntitySet="MessagesOfCompanies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Company" Association="Self.FK_User_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="User" EntitySet="User" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

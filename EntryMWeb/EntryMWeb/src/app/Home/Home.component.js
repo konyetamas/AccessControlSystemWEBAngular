@@ -14,17 +14,25 @@ var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
 var router_1 = require("@angular/router");
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent(http, router) {
+    function HomeComponent(http, router, route) {
         this.http = http;
         this.router = router;
+        this.route = route;
     }
+    HomeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.sub = this.route.params.subscribe(function (params) {
+            _this.id = +params['id'];
+            _this.router.navigate(['nav', _this.id]);
+        });
+    };
     HomeComponent = __decorate([
         core_1.Component({
             selector: 'app-home',
             templateUrl: './Home.html',
             styleUrls: ['./HomeStyle.css']
         }),
-        __metadata("design:paramtypes", [http_1.Http, router_1.Router])
+        __metadata("design:paramtypes", [http_1.Http, router_1.Router, router_1.ActivatedRoute])
     ], HomeComponent);
     return HomeComponent;
 }());

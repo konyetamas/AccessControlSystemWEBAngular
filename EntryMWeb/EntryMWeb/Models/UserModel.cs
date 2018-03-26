@@ -16,5 +16,6 @@ namespace EntryMWeb.Model
 
         public string Password { get; set; }
 
+        public int CompanyId { get; set; }
     }
 }

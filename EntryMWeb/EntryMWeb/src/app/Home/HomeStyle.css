@@ -1,2 +1,60 @@
-﻿body {
+﻿.Myli{display:inline-block !important;}
+
+.mynavbar {
+	text-align:center;
 }
+.mynavbar .nav {
+	float:none;
+}
+.mynavbar .nav li {
+	display:inline-block;
+	float:none;
+	margin:0 20px;
+	vertical-align:middle;
+}
+.mynavbar .nav li a {
+	border-radius:10px;
+	background:#669900	 ;
+	color:#fff;
+}
+.mynavbar .nav li a:hover {
+	background:red
+}
+.mynavbar .nav li.mylogo a, .mynavbar .nav li.mylogo a:hover {
+	background:transparent;
+	max-width:150px;
+}
+.mynavbar .nav li.mylogo a img {
+	width:100%;
+	height:auto;
+	vertical-align:middle;
+	display:inline-block;
+}
+.navbar-brand {
+	display:none
+}
+@media screen and (max-width:768px) {
+    .navbar-brand {
+        display: inline;
+    }
+
+    .mynavbar .nav li {
+        display: block;
+        margin: 0;
+    }
+
+        .mynavbar .nav li a {
+            border-radius: 0;
+            display: block;
+            border-bottom: 1px solid #fff;
+        }
+
+    .mynavbar li.mylogo {
+        display: none;
+    }
+
+   
+
+    
+}
+

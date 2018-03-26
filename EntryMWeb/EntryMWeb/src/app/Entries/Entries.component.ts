@@ -17,6 +17,8 @@ export class EntriesComponent implements OnInit {
     constructor(private router: Router, private http: Http) { }
     user: object = { Name: "", Password: "" };
     Items: Array<Entry>;
+    companyId: number;
+    private sub: any;
 
     displayedColumns = ['Id', 'MemberName','EntryDate'];
     dataSource = new MatTableDataSource(this.Items);
@@ -27,7 +29,7 @@ export class EntriesComponent implements OnInit {
         let myHeaders = new Headers();
         myHeaders.append('Content-Type', 'application/json');
         myHeaders.append('CompanyId', '1');
-        const url = "../../../api/member/GetEntriesByCompanyId?CompanyId=4";
+        const url = "../../../api/member/GetEntriesByCompanyId?CompanyId="+ this.companyId;
         this.http.get(url).subscribe(
             (res: Response) => {
                 this.Items = res.json();
@@ -35,7 +37,9 @@ export class EntriesComponent implements OnInit {
     }
 
     ngOnInit() {
-
+        this.sub = this.route.params.subscribe(params => {
+            this.companyId = +params['id'];
+        });   
         this.GetEntries();
     }
 

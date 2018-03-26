@@ -49,6 +49,7 @@ namespace EntryMWeb.DAL
             userModel.Name = userDB.Name;
             userModel.Role = userDB.Role;
             userModel.Password = userDB.Password;
+            userModel.CompanyId = userDB.CompanyId==null ? 0: (int)userDB.CompanyId;
             return userModel;
         }
     }

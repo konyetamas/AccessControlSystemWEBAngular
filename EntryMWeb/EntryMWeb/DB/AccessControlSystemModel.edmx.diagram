@@ -12,12 +12,13 @@
         <EntityTypeShape EntityType="AccessControlSystemModel.MessageFromCompany" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="AccessControlSystemModel.MessagesOfCompany" Width="1.5" PointX="6" PointY="6.375" IsExpanded="true" />
         <EntityTypeShape EntityType="AccessControlSystemModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AccessControlSystemModel.User" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
         <AssociationConnector Association="AccessControlSystemModel.FK_Member_Company" ManuallyRouted="false" />
         <AssociationConnector Association="AccessControlSystemModel.FK_MessageFromCompany_Company" ManuallyRouted="false" />
         <AssociationConnector Association="AccessControlSystemModel.FK_MessagesOfCompanies_Company" ManuallyRouted="false" />
         <AssociationConnector Association="AccessControlSystemModel.FK_Entry_Entry" ManuallyRouted="false" />
         <AssociationConnector Association="AccessControlSystemModel.FK_MessagesOfCompanies_MessageFromBuilding" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AccessControlSystemModel.User" Width="1.5" PointX="3" PointY="0.75" />
+        <AssociationConnector Association="AccessControlSystemModel.FK_User_Company" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

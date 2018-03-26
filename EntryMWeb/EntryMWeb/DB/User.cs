@@ -18,5 +18,8 @@ namespace EntryMWeb.DB
         public string Name { get; set; }
         public int Role { get; set; }
         public string Password { get; set; }
+        public Nullable<int> CompanyId { get; set; }
+    
+        public virtual Company Company { get; set; }
     }
 }

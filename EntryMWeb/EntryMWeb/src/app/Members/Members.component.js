@@ -16,9 +16,10 @@ var router_1 = require("@angular/router");
 var material_1 = require("@angular/material");
 var http_2 = require("@angular/common/http");
 var MembersComponent = /** @class */ (function () {
-    function MembersComponent(router, http) {
+    function MembersComponent(router, http, route) {
         this.router = router;
         this.http = http;
+        this.route = route;
         this.user = { Name: "", Password: "" };
         this.displayedColumns = ['Id', 'FirstName', 'LastName', 'Title'];
         this.dataSource = new material_1.MatTableDataSource(this.Items);
@@ -29,7 +30,7 @@ var MembersComponent = /** @class */ (function () {
         myHeaders.append('Content-Type', 'application/json');
         myHeaders.append('CompanyId', '1');
         var params = new http_2.HttpParams().set("CompanyId", '1');
-        var url = "../../../api/member/GetMembersByCompany?CompanyId=4";
+        var url = "../../../api/member/GetMembersByCompany?CompanyId=" + this.companyId;
         var options = new http_1.RequestOptions({ method: http_1.RequestMethod.Get, headers: myHeaders, params: params });
         this.http.get(url).subscribe(function (res) {
             _this.Items = res.json();
@@ -38,6 +39,10 @@ var MembersComponent = /** @class */ (function () {
         });
     };
     MembersComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.sub = this.route.params.subscribe(function (params) {
+            _this.companyId = +params['id'];
+        });
         this.GetMembers();
     };
     __decorate([
@@ -50,7 +55,7 @@ var MembersComponent = /** @class */ (function () {
             templateUrl: './Members.html',
             styleUrls: ['./MembersStyle.css']
         }),
-        __metadata("design:paramtypes", [router_1.Router, http_1.Http])
+        __metadata("design:paramtypes", [router_1.Router, http_1.Http, router_1.ActivatedRoute])
     ], MembersComponent);
     return MembersComponent;
 }());

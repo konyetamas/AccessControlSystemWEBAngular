@@ -20,6 +20,7 @@ namespace EntryMWeb.DB
             this.Members = new HashSet<Member>();
             this.MessageFromCompanies = new HashSet<MessageFromCompany>();
             this.MessagesOfCompanies = new HashSet<MessagesOfCompany>();
+            this.Users = new HashSet<User>();
         }
     
         public int Id { get; set; }
@@ -34,5 +35,7 @@ namespace EntryMWeb.DB
         public virtual ICollection<MessageFromCompany> MessageFromCompanies { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MessagesOfCompany> MessagesOfCompanies { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> Users { get; set; }
     }
 }

@@ -31,7 +31,9 @@ var LoginComponent = /** @class */ (function () {
             .toPromise()
             .then(function (response) {
             if (response != null) {
-                _this.router.navigate(['home']);
+                // this.id = response.json;
+                _this.id = response.json();
+                _this.router.navigate(['home', _this.id]);
             }
             else {
                 alert("Wrong username or password");

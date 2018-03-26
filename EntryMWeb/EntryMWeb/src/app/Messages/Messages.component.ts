@@ -17,7 +17,8 @@ export class MessagesComponent implements OnInit {
     constructor(private router: Router, private http: Http) { }
     user: object = { Name: "", Password: "" };
     Items: Array<Message>;
-
+    companyId: number;
+    private sub: any;
 
     displayedColumns = ['Id', 'Subject', 'Text', 'Date', 'CompanyName'];
     dataSource = new MatTableDataSource(this.Items);
@@ -31,7 +32,7 @@ export class MessagesComponent implements OnInit {
         myHeaders.append('CompanyId', '1');
 
         let params = new HttpParams().set("CompanyId", '1');
-        const url = "../../../api/member/GetMessagesFromBuildingToCompany?CompanyId=4";
+        const url = "../../../api/member/GetMessagesFromBuildingToCompany?CompanyId=" + this.companyId;
 
         let options = new RequestOptions({ method: RequestMethod.Get, headers: myHeaders, params: params });
         this.http.get(url).subscribe(
@@ -44,6 +45,10 @@ export class MessagesComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.sub = this.route.params.subscribe(params => {
+            this.companyId = +params['id'];
+        });   
+
         this.GetMessages();
     }
 

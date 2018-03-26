@@ -57,10 +57,11 @@ import {
         MatInputModule,
         MatTableModule,
         RouterModule.forRoot([
-            { path: "login", component: LoginComponent },                               
-              { path: "home", component: HomeComponent,
+            { path: "login", component: LoginComponent },
+            { path: "home/:id", component: HomeComponent },                              
+              { path: "nav/:id", component: NavComponent,
                 children: [{
-                    path: 'members',
+                    path: 'members/:id',
                     component: MembersComponent
                 },
                 {

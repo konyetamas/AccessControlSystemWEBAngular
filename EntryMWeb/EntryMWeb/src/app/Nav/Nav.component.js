@@ -13,39 +13,30 @@ var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
 var router_1 = require("@angular/router");
-var material_1 = require("@angular/material");
+var router_2 = require("@angular/router");
 var NavComponent = /** @class */ (function () {
-    function NavComponent(router, http) {
-        this.router = router;
+    function NavComponent(http, router, route) {
         this.http = http;
-        this.user = { Name: "", Password: "" };
-        this.displayedColumns = ['Id', 'MemberName', 'EntryDate'];
-        this.dataSource = new material_1.MatTableDataSource(this.Items);
+        this.router = router;
+        this.route = route;
     }
-    NavComponent.prototype.GetEntries = function () {
+    NavComponent.prototype.ngOnInit = function () {
         var _this = this;
-        var myHeaders = new http_1.Headers();
-        myHeaders.append('Content-Type', 'application/json');
-        myHeaders.append('CompanyId', '1');
-        var url = "../../../api/member/GetEntriesByCompanyId?CompanyId=4";
-        this.http.get(url).subscribe(function (res) {
-            _this.Items = res.json();
+        this.sub = this.route.params.subscribe(function (params) {
+            _this.id = +params['id'];
+            alert(_this.id);
         });
     };
-    NavComponent.prototype.ngOnInit = function () {
-        this.GetEntries();
+    NavComponent.prototype.NavigateToMembers = function () {
+        this.router.navigate(['/members', this.id]);
     };
-    __decorate([
-        core_1.ViewChild(material_1.MatSort),
-        __metadata("design:type", material_1.MatSort)
-    ], NavComponent.prototype, "sort", void 0);
     NavComponent = __decorate([
         core_1.Component({
             selector: 'app-nav',
             templateUrl: './Nav.html',
             styleUrls: ['./NavStyle.css']
         }),
-        __metadata("design:paramtypes", [router_1.Router, http_1.Http])
+        __metadata("design:paramtypes", [http_1.Http, router_1.Router, router_2.ActivatedRoute])
     ], NavComponent);
     return NavComponent;
 }());

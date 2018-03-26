@@ -29,14 +29,14 @@ namespace EntryMWeb.Controllers
 
 
         [HttpGet]
-        public UserModel CheckUserAutenthication(string Username, string Password)
+        public int CheckUserAutenthication(string Username, string Password)
         {
             UserModel result = new UserModel();
             try
             {
-                UserModel user = new UserModel();
-                result = UserDAL.CheckUserAutenthication(user.Name, user.Password);
-                if (result == null)
+               
+                result = UserDAL.CheckUserAutenthication(Username, Password);
+                if (result == null && result.CompanyId==0)
                 {
                     throw new Exception();
                 }
@@ -45,7 +45,7 @@ namespace EntryMWeb.Controllers
             {
 
             }
-            return result;
+            return result==null ? 0: result.CompanyId;
         }
 
 

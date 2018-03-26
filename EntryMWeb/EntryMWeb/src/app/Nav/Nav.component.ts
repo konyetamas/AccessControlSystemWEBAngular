@@ -6,7 +6,7 @@ import { MatTableDataSource, MatSort } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 import { MatTableModule } from '@angular/material';
 import { HttpParams, HttpClient } from '@angular/common/http';
-import { Routes } from '@angular/router';
+import { Routes, ActivatedRoute } from '@angular/router';
 
 
 import { MembersComponent } from '../Members/Members.component';
@@ -21,29 +21,19 @@ import { EntriesComponent } from '../Entries/Entries.component';
 })
 export class NavComponent implements OnInit {
 
-    constructor(private router: Router, private http: Http) { }
-    user: object = { Name: "", Password: "" };
-    Items: Array<Entry>;
-
-    displayedColumns = ['Id', 'MemberName', 'EntryDate'];
-    dataSource = new MatTableDataSource(this.Items);
-    @ViewChild(MatSort) sort: MatSort;
-
-
-    GetEntries() {
-        let myHeaders = new Headers();
-        myHeaders.append('Content-Type', 'application/json');
-        myHeaders.append('CompanyId', '1');
-        const url = "../../../api/member/GetEntriesByCompanyId?CompanyId=4";
-        this.http.get(url).subscribe(
-            (res: Response) => {
-                this.Items = res.json();
-            })
-    }
+    constructor(private http: Http, private router: Router, private route: ActivatedRoute) { }
+    id: number;
+    private sub: any;
 
     ngOnInit() {
+        this.sub = this.route.params.subscribe(params => {
+            this.id = +params['id'];
+            alert(this.id);
+        });
+    }
 
-        this.GetEntries();
+    NavigateToMembers() {
+        this.router.navigate(['/members', this.id]);
     }
 
 }

@@ -65,9 +65,10 @@ var AppModule = /** @class */ (function () {
                 material_1.MatTableModule,
                 router_1.RouterModule.forRoot([
                     { path: "login", component: Login_component_1.LoginComponent },
-                    { path: "home", component: Home_component_1.HomeComponent,
+                    { path: "home/:id", component: Home_component_1.HomeComponent },
+                    { path: "nav/:id", component: Nav_component_1.NavComponent,
                         children: [{
-                                path: 'members',
+                                path: 'members/:id',
                                 component: Members_component_1.MembersComponent
                             },
                             {
