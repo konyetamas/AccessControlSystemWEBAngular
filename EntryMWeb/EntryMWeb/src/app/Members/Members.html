@@ -11,7 +11,7 @@
     <!-- Position Column -->
     <ng-container matColumnDef="Id">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.Id}} </mat-cell>
+      <mat-cell (click)="openEditDialog(element.Id)" *matCellDef="let element"> {{element.Id}} </mat-cell>
     </ng-container>
 
     <!-- Name Column -->
@@ -35,6 +35,11 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
+        <br>
+        <br>
+        <button mat-button (click)="openDialog()">Add new message</button>
 </div>
+
+   
 </body>
 </html>

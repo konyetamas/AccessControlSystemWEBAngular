@@ -21,6 +21,7 @@ namespace EntryMWeb.Model
 
         public string LastName { get; set; }
 
+        public int CompanyId { get; set; }
 
     }
 }

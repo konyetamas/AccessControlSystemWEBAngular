@@ -179,12 +179,18 @@
     <Content Include="scripts\umd\popper-utils.min.js" />
     <Content Include="scripts\umd\popper.js" />
     <Content Include="scripts\umd\popper.min.js" />
+    <Content Include="src\app\AddNewMember\AddNewMemberStyle.css" />
+    <Content Include="src\app\AddNewMember\AddNewMember.html" />
+    <Content Include="src\app\AddNewMessage\AddNewMessage.html" />
+    <Content Include="src\app\AddNewMessage\AddNewMessageStyle.css" />
     <Content Include="src\app\app.component.js" />
     <Content Include="src\app\app.component.spec.js" />
     <Content Include="src\app\App.html" />
     <Content Include="src\app\app.module.js" />
     <Content Include="src\app\CompanyDetails\CompanyDetails.html" />
     <Content Include="src\app\CompanyDetails\CompanyDetailsStyle.css" />
+    <Content Include="src\app\EditMember\EditMember.html" />
+    <Content Include="src\app\EditMember\EditMemberStyle.css" />
     <Content Include="src\app\Entries\Entries.html" />
     <Content Include="src\app\Entries\EntriesStyle.css" />
     <Content Include="src\app\Home\Home.html" />
@@ -196,6 +202,8 @@
     <Content Include="src\app\Members\MembersStyle.css" />
     <Content Include="src\app\Messages\Messages.html" />
     <Content Include="src\app\Messages\MessagesStyle.css" />
+    <Content Include="src\app\OutBoxMessages\OutBoxMessages.html" />
+    <Content Include="src\app\OutBoxMessages\OutBoxMessagesStyle.css" />
     <Content Include="src\app\StartPage\StartPage.html" />
     <Content Include="src\app\StartPage\StartPageStyle.css" />
     <Content Include="src\favicon.ico" />
@@ -318,11 +326,17 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="scripts\index.d.ts" />
+    <TypeScriptCompile Include="src\app\AddNewMember\AddNewMember.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\AddNewMember\AddNewMember.component.ts" />
+    <TypeScriptCompile Include="src\app\AddNewMessage\AddNewMessage.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\AddNewMessage\AddNewMessage.component.ts" />
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\CompanyDetails\CompanyDetails.component.spec.ts" />
     <TypeScriptCompile Include="src\app\CompanyDetails\CompanyDetails.component.ts" />
+    <TypeScriptCompile Include="src\app\EditMember\EditMember.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\EditMember\EditMember.component.ts" />
     <TypeScriptCompile Include="src\app\Entries\Entries.component.spec.ts" />
     <TypeScriptCompile Include="src\app\Entries\Entries.component.ts" />
     <TypeScriptCompile Include="src\app\Home\Home.component.spec.ts" />
@@ -334,6 +348,8 @@
     <TypeScriptCompile Include="src\app\Members\Members.component.ts" />
     <TypeScriptCompile Include="src\app\Messages\Messages.component.spec.ts" />
     <TypeScriptCompile Include="src\app\Messages\Messages.component.ts" />
+    <TypeScriptCompile Include="src\app\OutBoxMessages\OutBoxMessages.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\OutBoxMessages\OutBoxMessages.component.ts" />
     <TypeScriptCompile Include="src\app\StartPage\StartPage.component.spec.ts" />
     <TypeScriptCompile Include="src\app\StartPage\StartPage.component.ts" />
     <TypeScriptCompile Include="src\main.ts" />

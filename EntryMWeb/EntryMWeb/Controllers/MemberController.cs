@@ -14,6 +14,7 @@ namespace EntryMWeb.Controllers
     {
 
         [HttpGet]
+        [ActionName("GetMemberById")]
         public MemberModel GetMemberById(int MemberId)
         {
             MemberModel result = new MemberModel();
@@ -46,10 +47,39 @@ namespace EntryMWeb.Controllers
         }
 
 
+        [ActionName("AddNewMember")]
+        [HttpPost]   
+        public void AddNewMember(int model)
+        {
+            try
+            {
+               // MemberDAL.AddNewMember(model);
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
+
+        [HttpPost]
+        [ActionName("EditMember")]
+        public void EditMember(MemberModel model)
+        {
+            try
+            {
+                MemberDAL.EditMember(model);
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
+
+
         //[HttpPost]
         //public Action AddNewMember(MemberModel member)
         //{
-           
+
         //    try
         //    {
         //        result = MemberDAL.GetMemberById(MemberId);

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+    <table class="addnewmember-form" align="center">
+        <tr>
+            <td align="center">
+                <mat-form-field class="fieldStlye">
+                    <input matInput [(ngModel)]="member.Name" placeholder="Name">
+                </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="center">
+                <mat-form-field class="fieldStlye">
+                    <input matInput [(ngModel)]="member.CardNumber" placeholder="CardNumber">
+                </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="center">
+                <mat-form-field class="fieldStlye">
+                    <input matInput [(ngModel)]="member.FirstName" placeholder="FirstName">
+                </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="center">
+                <mat-form-field class="fieldStlye">
+                    <input matInput [(ngModel)]="member.LastName" placeholder="LastName">
+                </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="center">
+                <mat-form-field class="fieldStlye">
+                    <input matInput [(ngModel)]="member.Title" placeholder="Title">
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <button (click)="Add()" mat-button>Add</button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+
+<script src="../../../scripts/jquery-3.0.0.min.js"></script>
+<link href="/node_modules/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">

@@ -4,23 +4,28 @@ import 'rxjs/add/operator/toPromise';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatTableDataSource, MatSort } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
-import { MatTableModule } from '@angular/material';
+import { MatTableModule, MatDialog, MatDialogModule, MatDialogRef  } from '@angular/material';
 import { HttpParams, HttpClient } from '@angular/common/http';
+import { AddNewMemberComponent } from '../AddNewMember/AddNewMember.component';
+import { EditMemberComponent } from '../EditMember/EditMember.component';
 
 @Component({
     selector: 'app-members',
     templateUrl: './Members.html',
     styleUrls: ['./MembersStyle.css']
 })
+
+
+
 export class MembersComponent implements OnInit {
 
-    constructor(private router: Router, private http: Http, private route: ActivatedRoute) { }
+    constructor(private router: Router, private http: Http, private route: ActivatedRoute, public dialog: MatDialog) { }
     user: object = { Name: "", Password: "" };
     Items: Array<Member>;
     companyId: number;
     private sub: any;
 
-
+  
 
     displayedColumns = ['Id', 'FirstName', 'LastName', 'Title'];
     dataSource = new MatTableDataSource(this.Items);
@@ -46,8 +51,30 @@ export class MembersComponent implements OnInit {
            
     }
 
-
    
+
+    openDialog() {
+        this.dialog.open(AddNewMemberComponent, {
+            height: '450px',
+            width: '350px',
+            closeOnNavigation: true,
+            data: {
+                id: this.companyId
+            }
+        });
+    }
+
+    openEditDialog(actualId: number) {
+        this.dialog.open(EditMemberComponent, {
+            height: '450px',
+            width: '350px',
+            closeOnNavigation: true,
+            data: {
+                id: actualId,
+                companyId: this.companyId
+            }
+        });
+    }
 
     ngOnInit() {  
         this.sub = this.route.params.subscribe(params => {

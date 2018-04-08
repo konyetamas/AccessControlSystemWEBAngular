@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+   
+    <table class="login-form" align="center" id="LoginConatiner">
+        <tr>
+            <td align="center">
+                <mat-form-field class="fieldStlye">
+                    <input matInput [(ngModel)]="message.Subject" placeholder="Name">
+                </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="center">
+                <mat-form-field class="fieldStlye">
+                    <input matInput [(ngModel)]="message.Text" placeholder="Password">
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <button (click)="Send()" mat-button>Login</button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

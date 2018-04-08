@@ -12,7 +12,7 @@ import { HttpParams, HttpClient } from '@angular/common/http';
     templateUrl: './Messages.html',
     styleUrls: ['./MessagesStyle.css']
 })
-export class MessagesComponent implements OnInit {
+export class OutBoxMessagesComponent implements OnInit {
 
     constructor(private router: Router, private http: Http, private route: ActivatedRoute, public dialog: MatDialog) { }
     user: object = { Name: "", Password: "" };
@@ -31,9 +31,9 @@ export class MessagesComponent implements OnInit {
         myHeaders.append('Content-Type', 'application/json');
         myHeaders.append('CompanyId', '1');
 
-        const url = "../../../api/message/GetMessagesFromBuildingToCompany?CompanyId=" + this.companyId;
+        const url = "../../../api/message/GetMessagesByCompany?CompanyId=" + this.companyId;
 
-       
+
         this.http.get(url).subscribe(
             (res: Response) => {
                 this.Items = res.json();
@@ -43,12 +43,12 @@ export class MessagesComponent implements OnInit {
 
     }
 
-   
+
 
     ngOnInit() {
         this.sub = this.route.params.subscribe(params => {
             this.companyId = +params['id'];
-        });   
+        });
 
         this.GetMessages();
     }
@@ -61,4 +61,4 @@ export class Message {
     Text: string;
 }
 
- 
+

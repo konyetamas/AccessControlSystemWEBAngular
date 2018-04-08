@@ -14,11 +14,13 @@ var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
 var router_1 = require("@angular/router");
 var material_1 = require("@angular/material");
+var material_2 = require("@angular/material");
 var MessagesComponent = /** @class */ (function () {
-    function MessagesComponent(router, http, route) {
+    function MessagesComponent(router, http, route, dialog) {
         this.router = router;
         this.http = http;
         this.route = route;
+        this.dialog = dialog;
         this.user = { Name: "", Password: "" };
         this.displayedColumns = ['Id', 'Subject', 'Text'];
         this.dataSource = new material_1.MatTableDataSource(this.Items);
@@ -52,7 +54,7 @@ var MessagesComponent = /** @class */ (function () {
             templateUrl: './Messages.html',
             styleUrls: ['./MessagesStyle.css']
         }),
-        __metadata("design:paramtypes", [router_1.Router, http_1.Http, router_1.ActivatedRoute])
+        __metadata("design:paramtypes", [router_1.Router, http_1.Http, router_1.ActivatedRoute, material_2.MatDialog])
     ], MessagesComponent);
     return MessagesComponent;
 }());

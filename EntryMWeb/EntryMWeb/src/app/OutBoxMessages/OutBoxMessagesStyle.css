@@ -1,0 +1,19 @@
+﻿.example-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+    min-width: 800px;
+}
+
+.mat-header-cell.mat-sort-header-sorted {
+    color: black;
+}
+
+body {
+    background: none;
+}

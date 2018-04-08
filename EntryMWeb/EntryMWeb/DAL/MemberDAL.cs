@@ -52,6 +52,52 @@ namespace EntryMWeb.DAL
             return null;
         }
 
+        public static void AddNewMember(MemberModel model)
+        {
+
+            AccessControlSystemEntities context = new AccessControlSystemEntities();
+            try
+            {
+                Member memberDB = new Member();
+                memberDB.CardNumber = model.CardNumber;
+                memberDB.FirstName = model.FirstName;
+                memberDB.LastName = model.LastName;
+                memberDB.Title = model.Title;
+                memberDB.CompanyId = model.CompanyId;
+                context.Members.Add(memberDB);
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+
+            }
+           
+        }
+
+        public static void EditMember(MemberModel model)
+        {
+
+            AccessControlSystemEntities context = new AccessControlSystemEntities();
+            try
+            {
+                Member memberDB = context.Members.Where(x => x.Id == model.Id).FirstOrDefault();
+                if (memberDB != null)
+                {
+                    memberDB.CardNumber = model.CardNumber;
+                    memberDB.FirstName = model.FirstName;
+                    memberDB.LastName = model.LastName;
+                    memberDB.Title = model.Title;
+                    memberDB.CompanyId = model.CompanyId;
+                }              
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+
+            }
+
+        }
+
 
         public static List<MemberModel> GetMembersOfCompany(int CompanyId)
         {

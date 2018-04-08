@@ -14,12 +14,16 @@ var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
 var router_1 = require("@angular/router");
 var material_1 = require("@angular/material");
+var material_2 = require("@angular/material");
 var http_2 = require("@angular/common/http");
+var AddNewMember_component_1 = require("../AddNewMember/AddNewMember.component");
+var EditMember_component_1 = require("../EditMember/EditMember.component");
 var MembersComponent = /** @class */ (function () {
-    function MembersComponent(router, http, route) {
+    function MembersComponent(router, http, route, dialog) {
         this.router = router;
         this.http = http;
         this.route = route;
+        this.dialog = dialog;
         this.user = { Name: "", Password: "" };
         this.displayedColumns = ['Id', 'FirstName', 'LastName', 'Title'];
         this.dataSource = new material_1.MatTableDataSource(this.Items);
@@ -36,6 +40,27 @@ var MembersComponent = /** @class */ (function () {
             _this.Items = res.json();
             alert(_this.Items);
             console.log(_this.Items);
+        });
+    };
+    MembersComponent.prototype.openDialog = function () {
+        this.dialog.open(AddNewMember_component_1.AddNewMemberComponent, {
+            height: '450px',
+            width: '350px',
+            closeOnNavigation: true,
+            data: {
+                id: this.companyId
+            }
+        });
+    };
+    MembersComponent.prototype.openEditDialog = function (actualId) {
+        this.dialog.open(EditMember_component_1.EditMemberComponent, {
+            height: '450px',
+            width: '350px',
+            closeOnNavigation: true,
+            data: {
+                id: actualId,
+                companyId: this.companyId
+            }
         });
     };
     MembersComponent.prototype.ngOnInit = function () {
@@ -55,7 +80,7 @@ var MembersComponent = /** @class */ (function () {
             templateUrl: './Members.html',
             styleUrls: ['./MembersStyle.css']
         }),
-        __metadata("design:paramtypes", [router_1.Router, http_1.Http, router_1.ActivatedRoute])
+        __metadata("design:paramtypes", [router_1.Router, http_1.Http, router_1.ActivatedRoute, material_2.MatDialog])
     ], MembersComponent);
     return MembersComponent;
 }());

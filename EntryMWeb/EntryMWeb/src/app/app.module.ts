@@ -10,6 +10,10 @@ import { NavComponent } from './Nav/Nav.component';
 import { HomeComponent } from './Home/Home.component';
 import { StartPageComponent } from './StartPage/StartPage.component';
 import { CompanyDetailsComponent } from './CompanyDetails/CompanyDetails.component';
+import { AddNewMemberComponent } from './AddNewMember/AddNewMember.component';
+import { EditMemberComponent } from './EditMember/EditMember.component';
+import { OutBoxMessagesComponent } from './OutBoxMessages/OutBoxMessages.component';
+
 
 import { FormsModule } from '@angular/forms';
 
@@ -26,7 +30,8 @@ import { CdkTableModule } from '@angular/cdk/table';
 
 import { Component, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatSort } from '@angular/material';
-import { MatTableModule } from '@angular/material';
+
+import { MatTableModule, MatDialog, MatDialogModule, MatDialogRef } from '@angular/material';
 
 //import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
@@ -57,10 +62,12 @@ import {
         MatFormFieldModule,
         MatInputModule,
         MatTableModule,
+        MatDialogModule,
         RouterModule.forRoot([
             { path: "login", component: LoginComponent },
-            { path: "home/:id", component: HomeComponent },                              
-              { path: "nav/:id", component: NavComponent,
+            { path: "home/:id", component: HomeComponent },
+            {
+                path: "nav/:id", component: NavComponent,
                 children: [{
                     path: 'members/:id',
                     component: MembersComponent
@@ -68,16 +75,26 @@ import {
                 {
                     path: 'entries/:id',
                     component: EntriesComponent
-                    },
-                 {
+                },
+                {
                     path: 'details/:id',
                     component: CompanyDetailsComponent
                 },
                 {
                     path: 'messages/:id',
                     component: MessagesComponent
-                }]
-            }           
+                },
+                {
+                    path: 'addnewmember/:id',
+                    component: AddNewMemberComponent
+                },
+                {
+                    path: 'editmember/:id',
+                    component: EditMemberComponent
+                }
+
+                ]
+            }
 
 
         ])
@@ -91,7 +108,7 @@ import {
         MatInputModule,
         MatFormFieldModule,
     ],
-    declarations: [AppComponent, CompanyDetailsComponent, StartPageComponent, HomeComponent, NavComponent, LoginComponent, MembersComponent, MessagesComponent, EntriesComponent],
+    declarations: [AppComponent, OutBoxMessagesComponent, EditMemberComponent, CompanyDetailsComponent, AddNewMemberComponent, StartPageComponent, HomeComponent, NavComponent, LoginComponent, MembersComponent, MessagesComponent, EntriesComponent],
     bootstrap: [AppComponent]
 })
 
