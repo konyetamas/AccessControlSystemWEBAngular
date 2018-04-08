@@ -6,6 +6,9 @@
 .mynavbar .nav {
 	float:none;
 }
+.mynav{
+  text-align:center;
+}
 .mynavbar .nav li {
 	display:inline-block;
 	float:none;

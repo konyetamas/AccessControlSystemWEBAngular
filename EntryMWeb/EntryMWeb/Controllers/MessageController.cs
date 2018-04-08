@@ -13,6 +13,7 @@ namespace EntryMWeb.Controllers
     public class MessageController : ApiController
     {
         [HttpGet]
+        [ActionName("GetMessagesFromBuildingToCompany")]
         public List<MessageToCompanyModel> GetMessagesFromBuildingToCompany(int CompanyId)
         {
             List<MessageToCompanyModel> result = new List<MessageToCompanyModel>();

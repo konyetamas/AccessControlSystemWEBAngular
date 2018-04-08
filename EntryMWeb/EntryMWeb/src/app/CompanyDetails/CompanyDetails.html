@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <!--<div class="details-form">
+        <mat-form-field>
+            <input matInput  [(ngModel)]="company.Name" placeholder="Name">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="company.Address" placeholder="Address">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput  [(ngModel)]="company.Phone" placeholder="Phone">
+        </mat-form-field>
+
+    </div>-->
+
+    <table class="company-form" align="center" id="DetailsConteiner">
+        <tr>
+            <td align="center">
+                <mat-form-field class="fieldStlye">
+                    <input  matInput  [(ngModel)]="company.Name" placeholder="Name">
+                </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="center">
+                <mat-form-field class="fieldStlye">
+                    <input matInput [(ngModel)]="company.Address" placeholder="Address">
+                </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="center">
+                <mat-form-field class="fieldStlye">
+                    <input matInput [(ngModel)]="company.Phone" placeholder="Phone">
+                </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="center">
+                <button (click)="Save()" mat-button>Save</button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<script src="../../../scripts/jquery-3.0.0.min.js"></script>
+<link href="/node_modules/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">

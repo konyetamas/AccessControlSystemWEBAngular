@@ -9,6 +9,7 @@ import { EntriesComponent } from './Entries/Entries.component';
 import { NavComponent } from './Nav/Nav.component';
 import { HomeComponent } from './Home/Home.component';
 import { StartPageComponent } from './StartPage/StartPage.component';
+import { CompanyDetailsComponent } from './CompanyDetails/CompanyDetails.component';
 
 import { FormsModule } from '@angular/forms';
 
@@ -65,11 +66,15 @@ import {
                     component: MembersComponent
                 },
                 {
-                    path: 'entries',
+                    path: 'entries/:id',
                     component: EntriesComponent
+                    },
+                 {
+                    path: 'details/:id',
+                    component: CompanyDetailsComponent
                 },
                 {
-                    path: 'messages',
+                    path: 'messages/:id',
                     component: MessagesComponent
                 }]
             }           
@@ -86,7 +91,7 @@ import {
         MatInputModule,
         MatFormFieldModule,
     ],
-    declarations: [AppComponent, StartPageComponent, HomeComponent, NavComponent, LoginComponent, MembersComponent, MessagesComponent, EntriesComponent],
+    declarations: [AppComponent, CompanyDetailsComponent, StartPageComponent, HomeComponent, NavComponent, LoginComponent, MembersComponent, MessagesComponent, EntriesComponent],
     bootstrap: [AppComponent]
 })
 

@@ -15,9 +15,10 @@ require("rxjs/add/operator/toPromise");
 var router_1 = require("@angular/router");
 var material_1 = require("@angular/material");
 var EntriesComponent = /** @class */ (function () {
-    function EntriesComponent(router, http) {
+    function EntriesComponent(router, http, route) {
         this.router = router;
         this.http = http;
+        this.route = route;
         this.user = { Name: "", Password: "" };
         this.displayedColumns = ['Id', 'MemberName', 'EntryDate'];
         this.dataSource = new material_1.MatTableDataSource(this.Items);
@@ -27,7 +28,7 @@ var EntriesComponent = /** @class */ (function () {
         var myHeaders = new http_1.Headers();
         myHeaders.append('Content-Type', 'application/json');
         myHeaders.append('CompanyId', '1');
-        var url = "../../../api/member/GetEntriesByCompanyId?CompanyId=" + this.companyId;
+        var url = "../../../api/entry/GetEntriesByCompanyId?CompanyId=" + this.companyId;
         this.http.get(url).subscribe(function (res) {
             _this.Items = res.json();
         });
@@ -49,7 +50,7 @@ var EntriesComponent = /** @class */ (function () {
             templateUrl: './Entries.html',
             styleUrls: ['./EntriesStyle.css']
         }),
-        __metadata("design:paramtypes", [router_1.Router, http_1.Http])
+        __metadata("design:paramtypes", [router_1.Router, http_1.Http, router_1.ActivatedRoute])
     ], EntriesComponent);
     return EntriesComponent;
 }());

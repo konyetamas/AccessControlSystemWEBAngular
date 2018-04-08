@@ -20,7 +20,7 @@ export class MessagesComponent implements OnInit {
     companyId: number;
     private sub: any;
 
-    displayedColumns = ['Id', 'Subject', 'Text', 'Date', 'CompanyName'];
+    displayedColumns = ['Id', 'Subject', 'Text'];
     dataSource = new MatTableDataSource(this.Items);
     @ViewChild(MatSort) sort: MatSort;
 
@@ -31,10 +31,9 @@ export class MessagesComponent implements OnInit {
         myHeaders.append('Content-Type', 'application/json');
         myHeaders.append('CompanyId', '1');
 
-        let params = new HttpParams().set("CompanyId", '1');
-        const url = "../../../api/member/GetMessagesFromBuildingToCompany?CompanyId=" + this.companyId;
+        const url = "../../../api/message/GetMessagesFromBuildingToCompany?CompanyId=" + this.companyId;
 
-        let options = new RequestOptions({ method: RequestMethod.Get, headers: myHeaders, params: params });
+       
         this.http.get(url).subscribe(
             (res: Response) => {
                 this.Items = res.json();
@@ -58,8 +57,6 @@ export class Message {
     Id: string;
     Subject: string;
     Text: string;
-    Date: Date;
-    CompanyName: string;
 }
 
  

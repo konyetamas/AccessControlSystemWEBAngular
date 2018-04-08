@@ -139,6 +139,9 @@
       <LastGenOutput>AccessControlSystemModel.cs</LastGenOutput>
     </Content>
     <Content Include="Global.asax" />
+    <Content Include="Images\backgr2.jpg" />
+    <Content Include="Images\background.jpg" />
+    <Content Include="Images\header.jpg" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="scripts\bootstrap.bundle.js" />
@@ -180,6 +183,8 @@
     <Content Include="src\app\app.component.spec.js" />
     <Content Include="src\app\App.html" />
     <Content Include="src\app\app.module.js" />
+    <Content Include="src\app\CompanyDetails\CompanyDetails.html" />
+    <Content Include="src\app\CompanyDetails\CompanyDetailsStyle.css" />
     <Content Include="src\app\Entries\Entries.html" />
     <Content Include="src\app\Entries\EntriesStyle.css" />
     <Content Include="src\app\Home\Home.html" />
@@ -309,7 +314,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="src\app\Details\" />
     <Folder Include="View\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
@@ -317,6 +321,8 @@
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\CompanyDetails\CompanyDetails.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\CompanyDetails\CompanyDetails.component.ts" />
     <TypeScriptCompile Include="src\app\Entries\Entries.component.spec.ts" />
     <TypeScriptCompile Include="src\app\Entries\Entries.component.ts" />
     <TypeScriptCompile Include="src\app\Home\Home.component.spec.ts" />

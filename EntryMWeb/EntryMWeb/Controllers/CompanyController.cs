@@ -27,5 +27,33 @@ namespace EntryMWeb.Controllers
             return result;
         }
 
+        [HttpGet]
+        public CompanyModel GetCompanyById(int CompanyId)
+        {          
+            try
+            {
+              return  CompanyDAL.GetCompanyById(CompanyId);
+            }
+            catch (Exception e)
+            {
+
+            }
+            return null;
+        }
+
+
+        [HttpPost]
+        public void EditCompany(CompanyModel company)
+        {
+            try
+            {
+                CompanyDAL.EditCompany(company);
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
+
     }
 }

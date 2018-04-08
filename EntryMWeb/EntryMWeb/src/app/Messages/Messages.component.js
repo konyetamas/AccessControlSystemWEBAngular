@@ -14,13 +14,13 @@ var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
 var router_1 = require("@angular/router");
 var material_1 = require("@angular/material");
-var http_2 = require("@angular/common/http");
 var MessagesComponent = /** @class */ (function () {
-    function MessagesComponent(router, http) {
+    function MessagesComponent(router, http, route) {
         this.router = router;
         this.http = http;
+        this.route = route;
         this.user = { Name: "", Password: "" };
-        this.displayedColumns = ['Id', 'Subject', 'Text', 'Date', 'CompanyName'];
+        this.displayedColumns = ['Id', 'Subject', 'Text'];
         this.dataSource = new material_1.MatTableDataSource(this.Items);
     }
     MessagesComponent.prototype.GetMessages = function () {
@@ -28,9 +28,7 @@ var MessagesComponent = /** @class */ (function () {
         var myHeaders = new http_1.Headers();
         myHeaders.append('Content-Type', 'application/json');
         myHeaders.append('CompanyId', '1');
-        var params = new http_2.HttpParams().set("CompanyId", '1');
-        var url = "../../../api/member/GetMessagesFromBuildingToCompany?CompanyId=" + this.companyId;
-        var options = new http_1.RequestOptions({ method: http_1.RequestMethod.Get, headers: myHeaders, params: params });
+        var url = "../../../api/message/GetMessagesFromBuildingToCompany?CompanyId=" + this.companyId;
         this.http.get(url).subscribe(function (res) {
             _this.Items = res.json();
             alert(_this.Items);
@@ -54,7 +52,7 @@ var MessagesComponent = /** @class */ (function () {
             templateUrl: './Messages.html',
             styleUrls: ['./MessagesStyle.css']
         }),
-        __metadata("design:paramtypes", [router_1.Router, http_1.Http])
+        __metadata("design:paramtypes", [router_1.Router, http_1.Http, router_1.ActivatedRoute])
     ], MessagesComponent);
     return MessagesComponent;
 }());

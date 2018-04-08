@@ -16,6 +16,7 @@ var Entries_component_1 = require("./Entries/Entries.component");
 var Nav_component_1 = require("./Nav/Nav.component");
 var Home_component_1 = require("./Home/Home.component");
 var StartPage_component_1 = require("./StartPage/StartPage.component");
+var CompanyDetails_component_1 = require("./CompanyDetails/CompanyDetails.component");
 var forms_1 = require("@angular/forms");
 var animations_1 = require("@angular/platform-browser/animations");
 var animations_2 = require("@angular/platform-browser/animations");
@@ -72,11 +73,15 @@ var AppModule = /** @class */ (function () {
                                 component: Members_component_1.MembersComponent
                             },
                             {
-                                path: 'entries',
+                                path: 'entries/:id',
                                 component: Entries_component_1.EntriesComponent
                             },
                             {
-                                path: 'messages',
+                                path: 'details/:id',
+                                component: CompanyDetails_component_1.CompanyDetailsComponent
+                            },
+                            {
+                                path: 'messages/:id',
                                 component: Messages_component_1.MessagesComponent
                             }]
                     }
@@ -91,7 +96,7 @@ var AppModule = /** @class */ (function () {
                 material_2.MatInputModule,
                 material_2.MatFormFieldModule,
             ],
-            declarations: [app_component_1.AppComponent, StartPage_component_1.StartPageComponent, Home_component_1.HomeComponent, Nav_component_1.NavComponent, Login_component_1.LoginComponent, Members_component_1.MembersComponent, Messages_component_1.MessagesComponent, Entries_component_1.EntriesComponent],
+            declarations: [app_component_1.AppComponent, CompanyDetails_component_1.CompanyDetailsComponent, StartPage_component_1.StartPageComponent, Home_component_1.HomeComponent, Nav_component_1.NavComponent, Login_component_1.LoginComponent, Members_component_1.MembersComponent, Messages_component_1.MessagesComponent, Entries_component_1.EntriesComponent],
             bootstrap: [app_component_1.AppComponent]
         })
         //@NgModule({
