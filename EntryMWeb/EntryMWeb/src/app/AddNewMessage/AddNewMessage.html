@@ -6,11 +6,11 @@
 </head>
 <body>
    
-    <table class="login-form" align="center" id="LoginConatiner">
+    <table class="addnewmessage-form" align="center" id="LoginConatiner">
         <tr>
             <td align="center">
                 <mat-form-field class="fieldStlye">
-                    <input matInput [(ngModel)]="message.Subject" placeholder="Name">
+                    <input matInput [(ngModel)]="message.Subject" placeholder="Subject">
                 </mat-form-field>
             </td>
         </tr>
@@ -18,15 +18,18 @@
         <tr>
             <td align="center">
                 <mat-form-field class="fieldStlye">
-                    <input matInput [(ngModel)]="message.Text" placeholder="Password">
+                    <input matInput [(ngModel)]="message.Text" placeholder="Text">
                 </mat-form-field>
             </td>
         </tr>
         <tr>
             <td align="center">
-                <button (click)="Send()" mat-button>Login</button>
+                <button (click)="Send()" mat-button>Send</button>
             </td>
         </tr>
     </table>
 </body>
 </html>
+
+<script src="../../../scripts/jquery-3.0.0.min.js"></script>
+<link href="/node_modules/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">

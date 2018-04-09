@@ -1,18 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var testing_1 = require("@angular/core/testing");
-var AddNewMessage_component_1 = require("./AddNewMessage.component");
-describe('AddNewMemberComponent', function () {
+var OutBoxMessages_component_1 = require("./OutBoxMessages.component");
+describe('NavComponent', function () {
     var component;
     var fixture;
     beforeEach(testing_1.async(function () {
         testing_1.TestBed.configureTestingModule({
-            declarations: [AddNewMessage_component_1.AddNewMessageComponent]
+            declarations: [OutBoxMessages_component_1.OutBoxMessagesComponent]
         })
             .compileComponents();
     }));
     beforeEach(function () {
-        fixture = testing_1.TestBed.createComponent(AddNewMessage_component_1.AddNewMessageComponent);
+        fixture = testing_1.TestBed.createComponent(OutBoxMessages_component_1.OutBoxMessagesComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });
@@ -20,4 +20,4 @@ describe('AddNewMemberComponent', function () {
         expect(component).toBeTruthy();
     });
 });
-//# sourceMappingURL=AddNewMessage.component.spec.js.map
+//# sourceMappingURL=OutBoxMessages.component.spec.js.map

@@ -20,6 +20,10 @@ C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\Nav\Nav.component.js.map
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\CompanyDetails\CompanyDetails.component.js
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\CompanyDetails\CompanyDetails.component.js.map
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\AddNewMessage\AddNewMessage.component.js
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\AddNewMessage\AddNewMessage.component.js.map
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\OutBoxMessages\OutBoxMessages.component.js
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\OutBoxMessages\OutBoxMessages.component.js.map
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\app.module.js
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\app.module.js.map
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\main.js
@@ -32,8 +36,6 @@ C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\AddNewMember\AddNewMember.component.spec.js.map
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\AddNewMessage\AddNewMessage.component.spec.js
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\AddNewMessage\AddNewMessage.component.spec.js.map
-C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\AddNewMessage\AddNewMessage.component.js
-C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\AddNewMessage\AddNewMessage.component.js.map
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\CompanyDetails\CompanyDetails.component.spec.js
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\CompanyDetails\CompanyDetails.component.spec.js.map
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\EditMember\EditMember.component.spec.js
@@ -50,5 +52,7 @@ C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\Messages\Messages.component.spec.js.map
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\Nav\Nav.component.spec.js
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\Nav\Nav.component.spec.js.map
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\OutBoxMessages\OutBoxMessages.component.spec.js
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\OutBoxMessages\OutBoxMessages.component.spec.js.map
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\StartPage\StartPage.component.spec.js
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\EntryMWeb\src\app\StartPage\StartPage.component.spec.js.map

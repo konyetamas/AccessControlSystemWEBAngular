@@ -13,6 +13,7 @@ import { CompanyDetailsComponent } from './CompanyDetails/CompanyDetails.compone
 import { AddNewMemberComponent } from './AddNewMember/AddNewMember.component';
 import { EditMemberComponent } from './EditMember/EditMember.component';
 import { OutBoxMessagesComponent } from './OutBoxMessages/OutBoxMessages.component';
+import { AddNewMessageComponent } from './AddNewMessage/AddNewMessage.component';
 
 
 import { FormsModule } from '@angular/forms';
@@ -91,7 +92,17 @@ import {
                 {
                     path: 'editmember/:id',
                     component: EditMemberComponent
-                }
+                },
+
+                  {
+                        path: 'outboxmessages/:id',
+                      component: OutBoxMessagesComponent
+                  },
+
+                    {
+                        path: 'addnewmessage',
+                        component: AddNewMessageComponent
+                    }
 
                 ]
             }
@@ -108,7 +119,7 @@ import {
         MatInputModule,
         MatFormFieldModule,
     ],
-    declarations: [AppComponent, OutBoxMessagesComponent, EditMemberComponent, CompanyDetailsComponent, AddNewMemberComponent, StartPageComponent, HomeComponent, NavComponent, LoginComponent, MembersComponent, MessagesComponent, EntriesComponent],
+    declarations: [AppComponent, OutBoxMessagesComponent, AddNewMessageComponent, EditMemberComponent, CompanyDetailsComponent, AddNewMemberComponent, StartPageComponent, HomeComponent, NavComponent, LoginComponent, MembersComponent, MessagesComponent, EntriesComponent],
     bootstrap: [AppComponent]
 })
 

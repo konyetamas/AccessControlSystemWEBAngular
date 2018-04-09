@@ -16,7 +16,8 @@ namespace EntryMWeb.DAL
             try
             {
                 MessageFromCompany messageDB = MaptoMessageFromCompanyDBModel(messageModel, context);
-                context.MessageFromCompanies.Add(messageDB); 
+                context.MessageFromCompanies.Add(messageDB);
+                context.SaveChanges();
             }
             catch(Exception e )
             {
@@ -53,11 +54,35 @@ namespace EntryMWeb.DAL
             return null;
         }
 
+
+        public static List<MessageFromCompanyModel> GetMessagesByCompany(int CompanyId)
+        {
+
+            List<MessageFromCompany> messages = new List<MessageFromCompany>();
+            List<MessageFromCompanyModel> messagesModels = new List<MessageFromCompanyModel>();
+            AccessControlSystemEntities context = new AccessControlSystemEntities();
+            try
+            {
+                messages = context.MessageFromCompanies.Where(x => x.CompanyId == CompanyId).ToList();
+
+                foreach (var item in messages)
+                {
+                    messagesModels.Add(MapToMemberMessageFromCompanyModel(item, context));
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            return messagesModels;
+        }
+
         private static MessageFromCompanyModel MapToMemberMessageFromCompanyModel(MessageFromCompany messageFromCompanyDB, AccessControlSystemEntities context)
         {
             MessageFromCompanyModel messageFormCompany = new MessageFromCompanyModel();
             messageFormCompany.Id = messageFromCompanyDB.Id;
             messageFormCompany.Text = messageFromCompanyDB.Value;
+            messageFormCompany.Subject = messageFromCompanyDB.Subject;
             messageFormCompany.CompanyName = (from x in context.MessageFromCompanies
                                        where x.Id == messageFormCompany.Id
                                        from y in context.Companies
@@ -86,6 +111,7 @@ namespace EntryMWeb.DAL
             messageFromCompanyDB.Value = messageFromCompanyModel.Text;
             messageFromCompanyDB.Date = messageFromCompanyModel.Date;
             messageFromCompanyDB.Subject = messageFromCompanyModel.Subject;
+            messageFromCompanyDB.CompanyId = messageFromCompanyModel.CompanyId;
             return messageFromCompanyDB;
         }
 

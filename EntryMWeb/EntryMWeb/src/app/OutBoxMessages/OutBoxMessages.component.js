@@ -15,8 +15,9 @@ require("rxjs/add/operator/toPromise");
 var router_1 = require("@angular/router");
 var material_1 = require("@angular/material");
 var material_2 = require("@angular/material");
-var MessagesComponent = /** @class */ (function () {
-    function MessagesComponent(router, http, route, dialog) {
+var AddNewMessage_component_1 = require("../AddNewMessage/AddNewMessage.component");
+var OutBoxMessagesComponent = /** @class */ (function () {
+    function OutBoxMessagesComponent(router, http, route, dialog) {
         this.router = router;
         this.http = http;
         this.route = route;
@@ -25,41 +26,50 @@ var MessagesComponent = /** @class */ (function () {
         this.displayedColumns = ['Id', 'Subject', 'Text'];
         this.dataSource = new material_1.MatTableDataSource(this.Items);
     }
-    MessagesComponent.prototype.GetMessages = function () {
+    OutBoxMessagesComponent.prototype.GetMessages = function () {
         var _this = this;
-        var url = "../../../api/message/GetMessagesFromBuildingToCompany?CompId=" + this.companyId;
+        var url = "../../../api/outboxmessage/GetCompanyMessages?Id=" + this.companyId;
         this.http.get(url).subscribe(function (res) {
             _this.Items = res.json();
-            alert(_this.Items);
             console.log(_this.Items);
         });
     };
-    MessagesComponent.prototype.ngOnInit = function () {
+    OutBoxMessagesComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.sub = this.route.params.subscribe(function (params) {
             _this.companyId = +params['id'];
         });
         this.GetMessages();
     };
+    OutBoxMessagesComponent.prototype.openDialog = function () {
+        this.dialog.open(AddNewMessage_component_1.AddNewMessageComponent, {
+            height: '450px',
+            width: '350px',
+            closeOnNavigation: true,
+            data: {
+                companyId: this.companyId
+            }
+        });
+    };
     __decorate([
         core_1.ViewChild(material_1.MatSort),
         __metadata("design:type", material_1.MatSort)
-    ], MessagesComponent.prototype, "sort", void 0);
-    MessagesComponent = __decorate([
+    ], OutBoxMessagesComponent.prototype, "sort", void 0);
+    OutBoxMessagesComponent = __decorate([
         core_1.Component({
-            selector: 'app-messages',
-            templateUrl: './Messages.html',
-            styleUrls: ['./MessagesStyle.css']
+            selector: 'app-outboxmessages',
+            templateUrl: './OutBoxMessages.html',
+            styleUrls: ['./OutBoxMessagesStyle.css']
         }),
         __metadata("design:paramtypes", [router_1.Router, http_1.Http, router_1.ActivatedRoute, material_2.MatDialog])
-    ], MessagesComponent);
-    return MessagesComponent;
+    ], OutBoxMessagesComponent);
+    return OutBoxMessagesComponent;
 }());
-exports.MessagesComponent = MessagesComponent;
-var Message = /** @class */ (function () {
-    function Message() {
+exports.OutBoxMessagesComponent = OutBoxMessagesComponent;
+var MessageFromCompany = /** @class */ (function () {
+    function MessageFromCompany() {
     }
-    return Message;
+    return MessageFromCompany;
 }());
-exports.Message = Message;
-//# sourceMappingURL=Messages.component.js.map
+exports.MessageFromCompany = MessageFromCompany;
+//# sourceMappingURL=OutBoxMessages.component.js.map

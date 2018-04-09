@@ -6,17 +6,17 @@ import { MatTableDataSource, MatSort } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 import { MatTableModule, MatDialog } from '@angular/material';
 import { HttpParams, HttpClient } from '@angular/common/http';
-
+import { AddNewMessageComponent } from '../AddNewMessage/AddNewMessage.component';
 @Component({
-    selector: 'app-messages',
-    templateUrl: './Messages.html',
-    styleUrls: ['./MessagesStyle.css']
+    selector: 'app-outboxmessages',
+    templateUrl: './OutBoxMessages.html',
+    styleUrls: ['./OutBoxMessagesStyle.css']
 })
 export class OutBoxMessagesComponent implements OnInit {
 
     constructor(private router: Router, private http: Http, private route: ActivatedRoute, public dialog: MatDialog) { }
     user: object = { Name: "", Password: "" };
-    Items: Array<Message>;
+    Items: Array<MessageFromCompany>;
     companyId: number;
     private sub: any;
 
@@ -26,24 +26,14 @@ export class OutBoxMessagesComponent implements OnInit {
 
 
     GetMessages() {
-
-        let myHeaders = new Headers();
-        myHeaders.append('Content-Type', 'application/json');
-        myHeaders.append('CompanyId', '1');
-
-        const url = "../../../api/message/GetMessagesByCompany?CompanyId=" + this.companyId;
-
+        const url = "../../../api/outboxmessage/GetCompanyMessages?Id=" + this.companyId;
 
         this.http.get(url).subscribe(
             (res: Response) => {
                 this.Items = res.json();
-                alert(this.Items);
                 console.log(this.Items);
             })
-
     }
-
-
 
     ngOnInit() {
         this.sub = this.route.params.subscribe(params => {
@@ -53,12 +43,27 @@ export class OutBoxMessagesComponent implements OnInit {
         this.GetMessages();
     }
 
+    openDialog() {
+        this.dialog.open(AddNewMessageComponent, {
+            height: '450px',
+            width: '350px',
+            closeOnNavigation: true,
+            data: {
+                companyId: this.companyId
+            }
+        });
+    }
+
 }
 
-export class Message {
+
+
+export class MessageFromCompany {
     Id: string;
     Subject: string;
     Text: string;
+    CompanyId: number;
+    CompanyName: string;
 }
 
 

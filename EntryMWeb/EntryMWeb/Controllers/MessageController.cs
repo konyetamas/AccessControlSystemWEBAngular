@@ -14,12 +14,12 @@ namespace EntryMWeb.Controllers
     {
         [HttpGet]
         [ActionName("GetMessagesFromBuildingToCompany")]
-        public List<MessageToCompanyModel> GetMessagesFromBuildingToCompany(int CompanyId)
+        public List<MessageToCompanyModel> GetMessagesFromBuildingToCompany(int CompId)
         {
             List<MessageToCompanyModel> result = new List<MessageToCompanyModel>();
             try
             {
-                result = MessageDAL.GetMessagesFromBuildingToCompany(CompanyId);
+                result = MessageDAL.GetMessagesFromBuildingToCompany(CompId);
             }
             catch (Exception e)
             {
@@ -28,22 +28,22 @@ namespace EntryMWeb.Controllers
             return result;
         }
 
+
+     
+
         [HttpPost]
-        public void AddNewMessage(MessageFromCompanyModel messageModel)
-        {
-            
+        [ActionName("AddNewMessageToBuliding")]
+        public void AddNewMessageToBuliding(MessageFromCompanyModel messageModel)
+        { 
             try
             {
                 MessageDAL.AddNewMessage(messageModel);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
 
             }
-         
+
         }
-
-        
-
     }
 }

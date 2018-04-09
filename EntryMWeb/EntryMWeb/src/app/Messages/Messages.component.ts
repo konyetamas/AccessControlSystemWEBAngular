@@ -27,11 +27,7 @@ export class MessagesComponent implements OnInit {
 
     GetMessages() {
 
-        let myHeaders = new Headers();
-        myHeaders.append('Content-Type', 'application/json');
-        myHeaders.append('CompanyId', '1');
-
-        const url = "../../../api/message/GetMessagesFromBuildingToCompany?CompanyId=" + this.companyId;
+        const url = "../../../api/message/GetMessagesFromBuildingToCompany?CompId=" + this.companyId;
 
        
         this.http.get(url).subscribe(

@@ -16,6 +16,8 @@ namespace EntryMWeb.Model
 
         public string CompanyName { get; set; }
 
+        public int CompanyId { get; set; }
+
         public DateTime Date { get; set; }
     }
 }

@@ -35,8 +35,7 @@ namespace EntryMWeb.Controllers
         {
             List<MemberModel> result = new List<MemberModel>();
             try
-            {
-                
+            {               
                 result = MemberDAL.GetMembersByCompanyId(CompanyId);
             }
             catch (Exception e)
