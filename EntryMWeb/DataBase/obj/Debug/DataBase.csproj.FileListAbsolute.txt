@@ -1,0 +1,9 @@
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\DataBase\bin\Debug\DataBase.dll.config
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\DataBase\bin\Debug\DataBase.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\DataBase\bin\Debug\DataBase.pdb
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\DataBase\bin\Debug\EntityFramework.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\DataBase\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\DataBase\bin\Debug\EntityFramework.xml
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\DataBase\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\DataBase\obj\Debug\DataBase.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\DataBase\obj\Debug\DataBase.pdb

@@ -12,6 +12,7 @@ import { Routes, ActivatedRoute } from '@angular/router';
 import { MembersComponent } from '../Members/Members.component';
 import { MessagesComponent } from '../Messages/Messages.component';
 import { EntriesComponent } from '../Entries/Entries.component';
+import { OutBoxMessagesComponent } from '../OutBoxMessages/OutBoxMessages.component';
 
 
 @Component({

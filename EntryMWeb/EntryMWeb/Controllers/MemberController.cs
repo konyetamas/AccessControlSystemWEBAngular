@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using EntryMWeb.DB;
+using DataBase;
 using EntryMWeb.Model;
 using EntryMWeb.DAL;
 
@@ -46,19 +46,7 @@ namespace EntryMWeb.Controllers
         }
 
 
-        [ActionName("AddNewMember")]
-        [HttpPost]   
-        public void AddNewMember(int model)
-        {
-            try
-            {
-               // MemberDAL.AddNewMember(model);
-            }
-            catch (Exception e)
-            {
-
-            }
-        }
+       
 
         [HttpPost]
         [ActionName("EditMember")]

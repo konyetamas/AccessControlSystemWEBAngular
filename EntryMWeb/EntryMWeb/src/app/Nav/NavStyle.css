@@ -1,5 +1,9 @@
 ﻿.Myli{display:inline-block !important;}
 
+.navContainer{
+    background:transparent;
+}
+
 .mynavbar {
 	text-align:center;
 }

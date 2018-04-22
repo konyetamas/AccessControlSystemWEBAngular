@@ -5,7 +5,7 @@
   align-content:center;
   vertical-align:central;
   align-items:center;
-  background-color:transparent;
+   background-image: url('../Images/popupBG.jpg');
 }
 
 .fieldStlye {

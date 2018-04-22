@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgStyle } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Login/Login.component';
@@ -14,6 +15,7 @@ import { AddNewMemberComponent } from './AddNewMember/AddNewMember.component';
 import { EditMemberComponent } from './EditMember/EditMember.component';
 import { OutBoxMessagesComponent } from './OutBoxMessages/OutBoxMessages.component';
 import { AddNewMessageComponent } from './AddNewMessage/AddNewMessage.component';
+
 
 
 import { FormsModule } from '@angular/forms';

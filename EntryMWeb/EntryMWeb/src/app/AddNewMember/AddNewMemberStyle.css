@@ -1,13 +1,23 @@
 ﻿.addnewmember-form {
   width:300px;
   position:center;
-  display:block;
+  /*display:block;*/
   align-content:center;
   vertical-align:central;
   align-items:center;
-  background-color:transparent;
+ background-image: url('../Images/popupBG.jpg');
 }
 
 .fieldStlye {
   width: 200px;
+}
+
+.md-dialog-container {
+      background-color: grey;
+      width: 250px;
+      height: 250px
+}
+
+body{
+    background-image: url('../Images/popupBG.jpg');
 }

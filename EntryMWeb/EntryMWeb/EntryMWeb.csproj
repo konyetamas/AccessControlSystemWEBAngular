@@ -128,16 +128,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\DarkStyle.css" />
-    <Content Include="DB\AccessControlSystemModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AccessControlSystemModel.edmx</DependentUpon>
-      <LastGenOutput>AccessControlSystemModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DB\AccessControlSystemModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AccessControlSystemModel.edmx</DependentUpon>
-      <LastGenOutput>AccessControlSystemModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Global.asax" />
     <Content Include="Images\backgr2.jpg" />
     <Content Include="Images\background.jpg" />
@@ -224,6 +214,7 @@
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\EntryController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\MemberToAddController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\OutBoxMessageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -232,45 +223,6 @@
     <Compile Include="DAL\MemberDAL.cs" />
     <Compile Include="DAL\MessageDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
-    <Compile Include="DB\AccessControlSystemModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccessControlSystemModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\AccessControlSystemModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccessControlSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\AccessControlSystemModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccessControlSystemModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DB\Company.cs">
-      <DependentUpon>AccessControlSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\Entry.cs">
-      <DependentUpon>AccessControlSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\Member.cs">
-      <DependentUpon>AccessControlSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\MessageFromBuilding.cs">
-      <DependentUpon>AccessControlSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\MessageFromCompany.cs">
-      <DependentUpon>AccessControlSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\MessagesOfCompany.cs">
-      <DependentUpon>AccessControlSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\sysdiagram.cs">
-      <DependentUpon>AccessControlSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\User.cs">
-      <DependentUpon>AccessControlSystemModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -292,13 +244,6 @@
     <Content Include="package.json" />
     <Content Include="tslint.json" />
     <Content Include="src\tsconfig.json" />
-    <EntityDeploy Include="DB\AccessControlSystemModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AccessControlSystemModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="DB\AccessControlSystemModel.edmx.diagram">
-      <DependentUpon>AccessControlSystemModel.edmx</DependentUpon>
-    </Content>
     <Content Include="src\main.js.map" />
     <Content Include="src\app\app.module.js.map" />
     <Content Include="src\app\app.component.spec.js.map" />
@@ -359,6 +304,12 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataBase\DataBase.csproj">
+      <Project>{3bcc3845-58ad-46a3-a0cf-9314cf359585}</Project>
+      <Name>DataBase</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

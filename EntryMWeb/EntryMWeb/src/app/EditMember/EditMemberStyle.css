@@ -1,2 +1,13 @@
-﻿body {
+﻿.editmember-form {
+  width:300px;
+  position:center;
+  display:block;
+  align-content:center;
+  vertical-align:central;
+  align-items:center;
+ background-color:transparent;
+}
+
+.fieldStlye {
+  width: 200px;
 }

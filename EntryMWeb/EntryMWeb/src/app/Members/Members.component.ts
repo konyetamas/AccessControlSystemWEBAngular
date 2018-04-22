@@ -60,7 +60,8 @@ export class MembersComponent implements OnInit {
             closeOnNavigation: true,
             data: {
                 id: this.companyId
-            }
+            }, 
+            
         });
     }
 

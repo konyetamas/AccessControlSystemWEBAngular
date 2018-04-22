@@ -1,5 +1,5 @@
 ﻿using EntryMWeb.DAL;
-using EntryMWeb.DB;
+using DataBase;
 using EntryMWeb.Model;
 using System;
 using System.Collections.Generic;
@@ -27,6 +27,9 @@ namespace EntryMWeb.Controllers
             }
             return result;
         }
+
+
+      
 
         [HttpPost]
         [ActionName("AddNewMessage")]

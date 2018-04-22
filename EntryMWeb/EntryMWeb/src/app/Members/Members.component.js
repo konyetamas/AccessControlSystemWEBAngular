@@ -49,7 +49,7 @@ var MembersComponent = /** @class */ (function () {
             closeOnNavigation: true,
             data: {
                 id: this.companyId
-            }
+            },
         });
     };
     MembersComponent.prototype.openEditDialog = function (actualId) {

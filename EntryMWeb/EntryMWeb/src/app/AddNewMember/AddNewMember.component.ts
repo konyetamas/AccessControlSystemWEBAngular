@@ -32,7 +32,9 @@ export class AddNewMemberComponent {
 
 
     Add() {
-        const url = "../../../api/member/AddNewMember";
+        this.member.CompanyId = this.data.id;
+
+        const url = "../../../api/membertoadd/AddNewMember";
         this.http.post(url, this.member)
             .toPromise()
             .then((response: Response) => {

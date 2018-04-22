@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EntryMWeb.DB;
+using DataBase;
 using EntryMWeb.Model;
 
 namespace EntryMWeb.DAL

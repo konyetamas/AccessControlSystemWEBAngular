@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EntryMWeb.DB;
 using EntryMWeb.Model;
+using DataBase;
 
 namespace EntryMWeb.DAL
 {
@@ -25,6 +25,27 @@ namespace EntryMWeb.DAL
             }
             return null;
         }
+
+        public static List<UserModel> GetUsers()
+        {
+            List<UserModel> users = new List<UserModel>();
+            try
+            {
+                AccessControlSystemEntities context = new AccessControlSystemEntities();
+                List<User> usersDb = context.Users.ToList();
+               
+                foreach (var item in usersDb)
+                {
+                    users.Add(MapToUserModel(item, context));
+                }              
+            }
+            catch (Exception e)
+            {
+
+            }
+            return users;
+        }
+
 
         public static UserModel CheckUserAutenthication(string Name, string Password)
         {

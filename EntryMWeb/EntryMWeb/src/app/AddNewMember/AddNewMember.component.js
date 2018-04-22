@@ -34,7 +34,8 @@ var AddNewMemberComponent = /** @class */ (function () {
         };
     }
     AddNewMemberComponent.prototype.Add = function () {
-        var url = "../../../api/member/AddNewMember";
+        this.member.CompanyId = this.data.id;
+        var url = "../../../api/membertoadd/AddNewMember";
         this.http.post(url, this.member)
             .toPromise()
             .then(function (response) {

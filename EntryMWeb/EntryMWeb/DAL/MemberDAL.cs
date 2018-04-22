@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EntryMWeb.DB;
+using DataBase;
 using EntryMWeb.Model;
 
 namespace EntryMWeb.DAL
@@ -87,7 +87,6 @@ namespace EntryMWeb.DAL
                     memberDB.FirstName = model.FirstName;
                     memberDB.LastName = model.LastName;
                     memberDB.Title = model.Title;
-                    memberDB.CompanyId = model.CompanyId;
                 }              
                 context.SaveChanges();
             }
