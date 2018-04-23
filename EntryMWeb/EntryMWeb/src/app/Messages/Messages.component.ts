@@ -33,7 +33,7 @@ export class MessagesComponent implements OnInit {
         this.http.get(url).subscribe(
             (res: Response) => {
                 this.Items = res.json();
-                alert(this.Items);
+                //alert(this.Items);
                 console.log(this.Items);
             })
 

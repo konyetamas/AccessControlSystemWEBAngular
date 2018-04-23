@@ -5,9 +5,11 @@
   align-content:center;
   vertical-align:central;
   align-items:center;
-   background-image: url('../Images/popupBG.jpg');
+   /*background-image: url('../Images/popupBG.jpg');*/
+   background-color:white;
 }
 
 .fieldStlye {
   width: 200px;
+
 }

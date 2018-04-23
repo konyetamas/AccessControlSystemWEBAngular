@@ -38,7 +38,7 @@ var MembersComponent = /** @class */ (function () {
         var options = new http_1.RequestOptions({ method: http_1.RequestMethod.Get, headers: myHeaders, params: params });
         this.http.get(url).subscribe(function (res) {
             _this.Items = res.json();
-            alert(_this.Items);
+            //alert(this.Items);
             console.log(_this.Items);
         });
     };

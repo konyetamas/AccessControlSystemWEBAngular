@@ -43,7 +43,7 @@ var OutBoxMessagesComponent = /** @class */ (function () {
     };
     OutBoxMessagesComponent.prototype.openDialog = function () {
         this.dialog.open(AddNewMessage_component_1.AddNewMessageComponent, {
-            height: '450px',
+            height: '350px',
             width: '350px',
             closeOnNavigation: true,
             data: {

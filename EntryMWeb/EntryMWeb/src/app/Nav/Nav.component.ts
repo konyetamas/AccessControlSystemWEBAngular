@@ -17,8 +17,8 @@ import { OutBoxMessagesComponent } from '../OutBoxMessages/OutBoxMessages.compon
 
 @Component({
     selector: 'app-nav',
-    templateUrl: './Nav.html',
-    styleUrls: ['./NavStyle.css']
+    templateUrl: './Nav2.html',
+    styleUrls: ['./NavStyle2.css']
 })
 export class NavComponent implements OnInit {
 

@@ -30,7 +30,7 @@ var MessagesComponent = /** @class */ (function () {
         var url = "../../../api/message/GetMessagesFromBuildingToCompany?CompId=" + this.companyId;
         this.http.get(url).subscribe(function (res) {
             _this.Items = res.json();
-            alert(_this.Items);
+            //alert(this.Items);
             console.log(_this.Items);
         });
     };

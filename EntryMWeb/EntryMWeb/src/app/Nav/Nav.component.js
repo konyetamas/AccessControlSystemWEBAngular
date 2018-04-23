@@ -33,8 +33,8 @@ var NavComponent = /** @class */ (function () {
     NavComponent = __decorate([
         core_1.Component({
             selector: 'app-nav',
-            templateUrl: './Nav.html',
-            styleUrls: ['./NavStyle.css']
+            templateUrl: './Nav2.html',
+            styleUrls: ['./NavStyle2.css']
         }),
         __metadata("design:paramtypes", [http_1.Http, router_1.Router, router_2.ActivatedRoute])
     ], NavComponent);

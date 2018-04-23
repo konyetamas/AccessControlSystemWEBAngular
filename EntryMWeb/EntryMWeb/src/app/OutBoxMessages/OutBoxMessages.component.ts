@@ -45,7 +45,7 @@ export class OutBoxMessagesComponent implements OnInit {
 
     openDialog() {
         this.dialog.open(AddNewMessageComponent, {
-            height: '450px',
+            height: '350px',
             width: '350px',
             closeOnNavigation: true,
             data: {

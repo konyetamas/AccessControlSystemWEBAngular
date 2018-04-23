@@ -186,12 +186,14 @@
     <Content Include="src\app\Home\Home.html" />
     <Content Include="src\app\Home\HomeStyle.css" />
     <Content Include="src\app\Nav\Nav.html" />
+    <Content Include="src\app\Nav\Nav2.html" />
     <Content Include="src\app\Nav\NavStyle.css" />
     <Content Include="src\app\Login\LoginStyle.css" />
     <Content Include="src\app\Members\Members.html" />
     <Content Include="src\app\Members\MembersStyle.css" />
     <Content Include="src\app\Messages\Messages.html" />
     <Content Include="src\app\Messages\MessagesStyle.css" />
+    <Content Include="src\app\Nav\NavStyle2.css" />
     <Content Include="src\app\OutBoxMessages\OutBoxMessages.html" />
     <Content Include="src\app\OutBoxMessages\OutBoxMessagesStyle.css" />
     <Content Include="src\app\StartPage\StartPage.html" />
