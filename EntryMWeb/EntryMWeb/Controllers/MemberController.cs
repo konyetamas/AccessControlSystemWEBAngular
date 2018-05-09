@@ -20,7 +20,8 @@ namespace EntryMWeb.Controllers
             MemberModel result = new MemberModel();
             try
             {
-                result = MemberDAL.GetMemberById(MemberId);
+                MemberDAL memberDAL = new MemberDAL();
+                result = memberDAL.GetMemberById(MemberId);
             }
             catch (Exception e)
             {
@@ -35,8 +36,9 @@ namespace EntryMWeb.Controllers
         {
             List<MemberModel> result = new List<MemberModel>();
             try
-            {               
-                result = MemberDAL.GetMembersByCompanyId(CompanyId);
+            {
+                MemberDAL memberDAL = new MemberDAL();
+                result = memberDAL.GetMembersByCompanyId(CompanyId);
             }
             catch (Exception e)
             {
@@ -54,7 +56,8 @@ namespace EntryMWeb.Controllers
         {
             try
             {
-                MemberDAL.EditMember(model);
+                MemberDAL memberDAL = new MemberDAL();
+                memberDAL.EditMember(model);
             }
             catch (Exception e)
             {

@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using DataBase;
 using EntryMWeb.Model;
+using EntryMWeb.Repositry;
 
 namespace EntryMWeb.DAL
 {
-    public class MessageDAL
+    public class MessageDAL : IMessageRepository
     {
-        public static void AddNewMessage(MessageFromCompanyModel messageModel)
+        public void AddNewMessage(MessageFromCompanyModel messageModel)
         {
             AccessControlSystemEntities context = new AccessControlSystemEntities();
             try
@@ -28,7 +29,7 @@ namespace EntryMWeb.DAL
 
 
 
-        public static List<MessageToCompanyModel> GetMessagesFromBuildingToCompany(int CompanyId)
+        public List<MessageToCompanyModel> GetMessagesFromBuildingToCompany(int CompanyId)
         {
 
             AccessControlSystemEntities context = new AccessControlSystemEntities();
@@ -55,7 +56,7 @@ namespace EntryMWeb.DAL
         }
 
 
-        public static List<MessageFromCompanyModel> GetMessagesByCompany(int CompanyId)
+        public List<MessageFromCompanyModel> GetMessagesByCompany(int CompanyId)
         {
 
             List<MessageFromCompany> messages = new List<MessageFromCompany>();
@@ -78,7 +79,7 @@ namespace EntryMWeb.DAL
         }
 
 
-        public static MessageFromCompanyModel GetMessageFromCompanyById(int messageId, int CompanyId)
+        public MessageFromCompanyModel GetMessageFromCompanyById(int messageId, int CompanyId)
         {
             AccessControlSystemEntities context = new AccessControlSystemEntities();
             try
@@ -93,7 +94,7 @@ namespace EntryMWeb.DAL
             return null;
         }
 
-        public static MessageToCompanyModel GetMessageFromBuilding(int messageId)
+        public MessageToCompanyModel GetMessageFromBuilding(int messageId)
         {
             AccessControlSystemEntities context = new AccessControlSystemEntities();
             try
@@ -108,7 +109,7 @@ namespace EntryMWeb.DAL
             return null;
         }
 
-        private static MessageFromCompanyModel MapToMemberMessageFromCompanyModel(MessageFromCompany messageFromCompanyDB, AccessControlSystemEntities context)
+        private MessageFromCompanyModel MapToMemberMessageFromCompanyModel(MessageFromCompany messageFromCompanyDB, AccessControlSystemEntities context)
         {
             MessageFromCompanyModel messageFormCompany = new MessageFromCompanyModel();
             messageFormCompany.Id = messageFromCompanyDB.Id;
@@ -127,7 +128,7 @@ namespace EntryMWeb.DAL
    
 
 
-        private static MessageToCompanyModel MapToMessageToCompanyModel(MessageFromBuilding messageFromBulidingDB, AccessControlSystemEntities context)
+        private MessageToCompanyModel MapToMessageToCompanyModel(MessageFromBuilding messageFromBulidingDB, AccessControlSystemEntities context)
         {
             MessageToCompanyModel messageToCompany = new MessageToCompanyModel();
             messageToCompany.Id = messageFromBulidingDB.Id;

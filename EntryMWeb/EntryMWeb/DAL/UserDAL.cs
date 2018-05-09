@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using EntryMWeb.Model;
 using DataBase;
+using EntryMWeb.Repositry;
 
 namespace EntryMWeb.DAL
 {
-    public class UserDAL 
+    public class UserDAL : IUserRepository
     {
-        public static UserModel GetUserById(int Id)
+        public UserModel GetUserById(int Id)
         {
             try
             {
@@ -26,7 +27,7 @@ namespace EntryMWeb.DAL
             return null;
         }
 
-        public static List<UserModel> GetUsers()
+        public List<UserModel> GetUsers()
         {
             List<UserModel> users = new List<UserModel>();
             try
@@ -47,7 +48,7 @@ namespace EntryMWeb.DAL
         }
 
 
-        public static UserModel CheckUserAutenthication(string Name, string Password)
+        public UserModel CheckUserAutenthication(string Name, string Password)
         {
             try
             {
@@ -63,7 +64,7 @@ namespace EntryMWeb.DAL
             return null;
         }
 
-        private static UserModel MapToUserModel(User userDB, AccessControlSystemEntities context)
+        private UserModel MapToUserModel(User userDB, AccessControlSystemEntities context)
         {
             UserModel userModel = new UserModel();
             userModel.Id = userDB.Id;
@@ -73,5 +74,7 @@ namespace EntryMWeb.DAL
             userModel.CompanyId = userDB.CompanyId==null ? 0: (int)userDB.CompanyId;
             return userModel;
         }
+
+    
     }
 }

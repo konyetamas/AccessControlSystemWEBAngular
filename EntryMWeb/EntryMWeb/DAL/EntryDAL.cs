@@ -5,12 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataBase;
+using EntryMWeb.Repositry;
 
 namespace EntryMWeb.DAL
 {
-    public class EntryDAL
+    public class EntryDAL : IEntryRepository
     {
-        public static List<EntryModel> GetEntriesByCompanyId(int CompanyId)
+        public List<EntryModel> GetEntriesByCompanyId(int CompanyId)
         {
 
             AccessControlSystemEntities context = new AccessControlSystemEntities();
@@ -38,7 +39,7 @@ namespace EntryMWeb.DAL
         }
 
 
-        public static EntryModel MapToEntryModel(Entry entryDataBase, AccessControlSystemEntities context)
+        private EntryModel MapToEntryModel(Entry entryDataBase, AccessControlSystemEntities context)
         {
             EntryModel entryModel = new EntryModel();
             entryModel.Id = entryDataBase.Id;

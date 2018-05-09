@@ -5,14 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using DataBase;
 using EntryMWeb.Model;
+using EntryMWeb.Repositry;
 
 namespace EntryMWeb.DAL
 {
-    public class MemberDAL
+    public class MemberDAL : IMemberRepository
     {
 
 
-        public static MemberModel GetMemberById(int Id)
+        public MemberModel GetMemberById(int Id)
         {
 
             AccessControlSystemEntities context = new AccessControlSystemEntities();
@@ -31,7 +32,7 @@ namespace EntryMWeb.DAL
 
 
 
-        public static List<MemberModel> GetMembersByCompanyId(int CompanyId)
+        public List<MemberModel> GetMembersByCompanyId(int CompanyId)
         {
 
             AccessControlSystemEntities context = new AccessControlSystemEntities();
@@ -52,7 +53,7 @@ namespace EntryMWeb.DAL
             return null;
         }
 
-        public static void AddNewMember(MemberModel model)
+        public void AddNewMember(MemberModel model)
         {
 
             AccessControlSystemEntities context = new AccessControlSystemEntities();
@@ -74,7 +75,7 @@ namespace EntryMWeb.DAL
            
         }
 
-        public static void EditMember(MemberModel model)
+        public void EditMember(MemberModel model)
         {
 
             AccessControlSystemEntities context = new AccessControlSystemEntities();
@@ -98,7 +99,7 @@ namespace EntryMWeb.DAL
         }
 
 
-        public static List<MemberModel> GetMembersOfCompany(int CompanyId)
+        public List<MemberModel> GetMembersOfCompany(int CompanyId)
         {
 
             AccessControlSystemEntities context = new AccessControlSystemEntities();
@@ -120,7 +121,7 @@ namespace EntryMWeb.DAL
         }
 
 
-        public static MemberModel MapToMemberModel(Member memberDataBase, AccessControlSystemEntities context)
+        private MemberModel MapToMemberModel(Member memberDataBase, AccessControlSystemEntities context)
         {
             MemberModel memberModel = new MemberModel();
             memberModel.Id = memberDataBase.Id;

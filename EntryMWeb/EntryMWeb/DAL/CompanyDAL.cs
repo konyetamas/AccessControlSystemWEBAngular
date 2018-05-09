@@ -6,12 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EntryMWeb.Model;
+using EntryMWeb.Repositry;
 
 namespace EntryMWeb.DAL
 {
-    public class CompanyDAL
+    public class CompanyDAL : ICompanyRepository
     {
-        public static List<CompanyModel> GetCompanies()
+        public List<CompanyModel> GetCompanies()
         {
 
             AccessControlSystemEntities context = new AccessControlSystemEntities();
@@ -32,7 +33,7 @@ namespace EntryMWeb.DAL
             return null;
         }
 
-        public static CompanyModel GetCompanyById(int Id)
+        public CompanyModel GetCompanyById(int Id)
         {
             AccessControlSystemEntities context = new AccessControlSystemEntities();
             try
@@ -48,7 +49,7 @@ namespace EntryMWeb.DAL
             return null;
         }
 
-        public static void EditCompany(CompanyModel model)
+        public void EditCompany(CompanyModel model)
         {
             AccessControlSystemEntities context = new AccessControlSystemEntities();
             try
@@ -68,9 +69,7 @@ namespace EntryMWeb.DAL
 
             }
         }
-
-
-        public static CompanyModel MapToCompanyModel(Company companyDataBase, AccessControlSystemEntities context)
+        private CompanyModel MapToCompanyModel(Company companyDataBase, AccessControlSystemEntities context)
         {
             CompanyModel companyModel = new CompanyModel();
             companyModel.Id = companyDataBase.Id;

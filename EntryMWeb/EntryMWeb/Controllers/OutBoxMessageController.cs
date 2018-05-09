@@ -19,7 +19,8 @@ namespace EntryMWeb.Controllers
             List<MessageFromCompanyModel> result = new List<MessageFromCompanyModel>();
             try
             {
-                result = MessageDAL.GetMessagesByCompany(Id);
+                MessageDAL messaged = new MessageDAL();
+                result = messaged.GetMessagesByCompany(Id);
             }
             catch (Exception e)
             {
@@ -35,7 +36,8 @@ namespace EntryMWeb.Controllers
             MessageFromCompanyModel result = new MessageFromCompanyModel();
             try
             {
-                result = MessageDAL.GetMessageFromCompanyById(MessageId, CompanyId);
+                MessageDAL messageDAL = new MessageDAL();
+                result = messageDAL.GetMessageFromCompanyById(MessageId, CompanyId);
             }
             catch (Exception e)
             {
@@ -55,7 +57,8 @@ namespace EntryMWeb.Controllers
         {
             try
             {
-                MessageDAL.AddNewMessage(messageModel);
+                MessageDAL messageDAL = new MessageDAL();
+                messageDAL.AddNewMessage(messageModel);
             }
             catch (Exception e)
             {

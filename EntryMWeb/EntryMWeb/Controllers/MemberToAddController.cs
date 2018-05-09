@@ -17,7 +17,8 @@ namespace EntryMWeb.Controllers
         {
             try
             {
-                MemberDAL.AddNewMember(model);
+                MemberDAL memberDAL = new MemberDAL();
+                memberDAL.AddNewMember(model);
             }
             catch (Exception e)
             {

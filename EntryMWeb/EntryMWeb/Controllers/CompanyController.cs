@@ -18,7 +18,8 @@ namespace EntryMWeb.Controllers
             List<CompanyModel> result = new List<CompanyModel>();
             try
             {
-                result = CompanyDAL.GetCompanies();
+                CompanyDAL companyDAL = new CompanyDAL();
+                result = companyDAL.GetCompanies();
             }
             catch(Exception e)
             {
@@ -32,7 +33,8 @@ namespace EntryMWeb.Controllers
         {          
             try
             {
-              return  CompanyDAL.GetCompanyById(CompanyId);
+                CompanyDAL companyDAL = new CompanyDAL();
+                return companyDAL.GetCompanyById(CompanyId);
             }
             catch (Exception e)
             {
@@ -47,7 +49,8 @@ namespace EntryMWeb.Controllers
         {
             try
             {
-                CompanyDAL.EditCompany(company);
+                CompanyDAL companyDAL = new CompanyDAL();
+                companyDAL.EditCompany(company);
             }
             catch (Exception e)
             {

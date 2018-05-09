@@ -19,7 +19,8 @@ namespace EntryMWeb.Controllers
             List<EntryModel> result = new List<EntryModel>();
             try
             {
-                result = EntryDAL.GetEntriesByCompanyId(CompanyId);
+                EntryDAL entryDAL = new EntryDAL();
+                result = entryDAL.GetEntriesByCompanyId(CompanyId);
             }
             catch (Exception e)
             {

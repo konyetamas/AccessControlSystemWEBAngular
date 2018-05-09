@@ -18,7 +18,8 @@ namespace EntryMWeb.Controllers
             UserModel result = new UserModel();
             try
             {
-                result = UserDAL.GetUserById(MemberId);
+                UserDAL userd = new UserDAL();
+                result = userd.GetUserById(MemberId);
             }
             catch (Exception e)
             {
@@ -34,8 +35,8 @@ namespace EntryMWeb.Controllers
             UserModel result = new UserModel();
             try
             {
-               
-                result = UserDAL.CheckUserAutenthication(Username, Password);
+                UserDAL userd = new UserDAL();
+                result = userd.CheckUserAutenthication(Username, Password);
                 if (result == null && result.CompanyId==0)
                 {
                     throw new Exception();
