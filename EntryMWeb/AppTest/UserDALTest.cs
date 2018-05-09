@@ -15,8 +15,9 @@ namespace AppTest
         [Test]
         public void AddNewUserTest()
         {
-            UserModel model = UserDAL.GetUsers().Where(x => x.Id == UserDAL.GetUsers().Select(t => t.Id).Max()).FirstOrDefault();
-            UserModel loginresult = UserDAL.CheckUserAutenthication(model.Name, model.Password);
+            UserDAL userDAL = new UserDAL();
+            UserModel model = userDAL.GetUsers().Where(x => x.Id == userDAL.GetUsers().Select(t => t.Id).Max()).FirstOrDefault();
+            UserModel loginresult = userDAL.CheckUserAutenthication(model.Name, model.Password);
             Assert.That(loginresult != null, Is.True);
 
         }

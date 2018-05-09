@@ -16,12 +16,13 @@ namespace AppTest
         [Test]
         public void EditCompanyTest()
         {
-            int companyId = CompanyDAL.GetCompanies().Select(x => x.Id).Max();
+            CompanyDAL companyDAL = new CompanyDAL();
+            int companyId = companyDAL.GetCompanies().Select(x => x.Id).Max();
             CompanyModel model = new CompanyModel() { Id = companyId, Address = "testAddress" };
-            CompanyDAL.EditCompany(model);
+            companyDAL.EditCompany(model);
 
             CompanyModel company = new CompanyModel();
-            company = CompanyDAL.GetCompanies().Where(x => x.Address == "testAddress" && x.Id==companyId).FirstOrDefault();
+            company = companyDAL.GetCompanies().Where(x => x.Address == "testAddress" && x.Id==companyId).FirstOrDefault();
             Assert.That(company != null, Is.False);
 
         }

@@ -19,9 +19,11 @@ namespace AppTest
             MessageFromCompanyModel model = new MessageFromCompanyModel();
             model.Subject = "TestMessage";
             model.Text = "TestValue";
-            model.CompanyId = CompanyDAL.GetCompanies().Select(x => x.Id).Min();
-            MessageDAL.AddNewMessage(model);
-            MessageFromCompanyModel testmodel = MessageDAL.GetMessagesByCompany(model.CompanyId).Where(x => x.Subject == "TestMessage" && x.Text == "TestValue").FirstOrDefault();
+            CompanyDAL companyDAL = new CompanyDAL();
+            model.CompanyId = companyDAL.GetCompanies().Select(x => x.Id).Min();
+            MessageDAL messageDAL = new MessageDAL();
+            messageDAL.AddNewMessage(model);
+            MessageFromCompanyModel testmodel = messageDAL.GetMessagesByCompany(model.CompanyId).Where(x => x.Subject == "TestMessage" && x.Text == "TestValue").FirstOrDefault();
             Assert.That(testmodel != null, Is.True);
         }
     }

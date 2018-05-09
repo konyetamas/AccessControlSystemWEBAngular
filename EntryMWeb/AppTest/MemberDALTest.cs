@@ -18,11 +18,13 @@ namespace AppTest
             MemberModel model = new MemberModel();
             model.FirstName = "TestFirstName";
             model.CardNumber = "1111";
-            model.Title = "TestTitle";       
-            model.CompanyId = CompanyDAL.GetCompanies().Select(x => x.Id).Min();
-            MemberDAL.AddNewMember(model);
+            model.Title = "TestTitle";
+            CompanyDAL companyDAL = new CompanyDAL();
+            model.CompanyId = companyDAL.GetCompanies().Select(x => x.Id).Min();
+            MemberDAL memberDAL = new MemberDAL();
+            memberDAL.AddNewMember(model);
             List<MemberModel> membersbycompany = new List<MemberModel>();
-            membersbycompany = MemberDAL.GetMembersByCompanyId(model.CompanyId);
+            membersbycompany = memberDAL.GetMembersByCompanyId(model.CompanyId);
             MemberModel testmodel = membersbycompany.Where(x => x.FirstName== "TestFirstName").FirstOrDefault();        
             Assert.That(testmodel != null, Is.True);
 
@@ -33,13 +35,15 @@ namespace AppTest
         public void EditMemberTest()
         {
             MemberModel model = new MemberModel();
-            model.Id = MemberDAL.GetMembersByCompanyId(CompanyDAL.GetCompanies().Select(x => x.Id).Min()).Select(x=>x.Id).Max();
+            MemberDAL memberDAL = new MemberDAL();
+            CompanyDAL companyDAL = new CompanyDAL();
+            model.Id = memberDAL.GetMembersByCompanyId(companyDAL.GetCompanies().Select(x => x.Id).Min()).Select(x=>x.Id).Max();
             model.FirstName = "TestEditFirstName";
             model.LastName = "TestEditLastName";
             model.CardNumber = "22222";
             model.Title = "testTitle";
-            MemberDAL.EditMember(model);
-            MemberModel testmodel = MemberDAL.GetMembersByCompanyId(CompanyDAL.GetCompanies().Select(x => x.Id).Min()).Where(x => x.FirstName == "TestEditFirstName").FirstOrDefault();
+            memberDAL.EditMember(model);
+            MemberModel testmodel = memberDAL.GetMembersByCompanyId(companyDAL.GetCompanies().Select(x => x.Id).Min()).Where(x => x.FirstName == "TestEditFirstName").FirstOrDefault();
             Assert.That(testmodel != null, Is.True);
 
         }
