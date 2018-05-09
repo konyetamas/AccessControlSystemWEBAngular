@@ -1,0 +1,10 @@
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\DataBase\bin\Release\DataBase.dll.config
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\DataBase\bin\Release\DataBase.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\DataBase\bin\Release\DataBase.pdb
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\DataBase\bin\Release\EntityFramework.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\DataBase\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\DataBase\bin\Release\EntityFramework.xml
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\DataBase\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\DataBase\obj\Release\DataBase.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\DataBase\obj\Release\DataBase.pdb
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\DataBase\obj\Release\DataBase.csprojResolveAssemblyReference.cache

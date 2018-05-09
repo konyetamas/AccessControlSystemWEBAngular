@@ -23,11 +23,11 @@
 <nav class="navbar-fixed-top navbar-dark bg-inverse">
     <div class="container">
         <ul class="mynav" routerLinkActive="active">           
-            <li class="Myli"><a class="nav-link" [routerLink]="['details', id]">Company details</a></li>
-            <li class="Myli"><a class="nav-link" [routerLink]="['members', id]">Members</a></li>
-            <li class="Myli"><a class="nav-link"  [routerLink]="['entries', id]">Entries</a></li>
-            <li class="Myli"><a class="nav-link"  [routerLink]="['messages', id]">Inbox messages</a></li>
-            <li class="Myli"><a class="nav-link"  [routerLink]="['outboxmessages', id]">Outbox messages</a></li>
+            <li id="CompanyDetailsButton" class="Myli"><a class="nav-link" [routerLink]="['details', id]">Company details</a></li>
+            <li id="MembersButton" class="Myli"><a class="nav-link" [routerLink]="['members', id]">Members</a></li>
+            <li id="EntriesButton" class="Myli"><a class="nav-link"  [routerLink]="['entries', id]">Entries</a></li>
+            <li id="InboxMessagesButton" class="Myli"><a class="nav-link"  [routerLink]="['messages', id]">Inbox messages</a></li>
+            <li id="OutboxMessagesButton" class="Myli"><a class="nav-link"  [routerLink]="['outboxmessages', id]">Outbox messages</a></li>
         </ul>
     </div>
 </nav>

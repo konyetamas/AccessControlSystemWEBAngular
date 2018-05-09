@@ -7,11 +7,11 @@
 <body>
     <div align="center" id="navBlock">
         <ul style="align-items:center" routerLinkActive="active">
-            <li><a [routerLink]="['details', id]">Company details</a></li>
-            <li><a [routerLink]="['members', id]">Members</a></li>
-            <li><a [routerLink]="['entries', id]">Entries</a></li>
-            <li><a [routerLink]="['messages', id]">Inbox messages</a></li>
-            <li><a [routerLink]="['outboxmessages', id]">Outbox messages</a></li>
+            <li id="CompanyDetailsButton"><a [routerLink]="['details', id]">Company details</a></li>
+            <li id="MembersButton"><a [routerLink]="['members', id]">Members</a></li>
+            <li id="EntriesButton"><a [routerLink]="['entries', id]">Entries</a></li>
+            <li id="InboxMessagesButton"><a [routerLink]="['messages', id]">Inbox messages</a></li>
+            <li id="OutboxMessagesButton"><a [routerLink]="['outboxmessages', id]">Outbox messages</a></li>
         </ul>
 
         <router-outlet></router-outlet>

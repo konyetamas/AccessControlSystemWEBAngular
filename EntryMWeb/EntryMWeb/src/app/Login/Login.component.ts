@@ -26,14 +26,14 @@ export class LoginComponent {
         this.http.get(url)
             .toPromise()
             .then((response: Response) => {
-                if (response != null) {
+                if (response != null && response.json()!=0 ) {
                     // this.id = response.json;
 
                     this.id = response.json();
                     this.router.navigate(['home', this.id]);
                 }
                 else {
-                    alert("Wrong username or password") 
+                    alert("Wrong username or password");
                 }
 
             })

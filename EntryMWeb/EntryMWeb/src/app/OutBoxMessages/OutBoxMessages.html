@@ -6,7 +6,7 @@
 </head>
 <body>
     <div class="example-container mat-elevation-z8">
-        <mat-table #table [dataSource]="Items" matSort>
+        <mat-table id="OutboxMessagesList" #table [dataSource]="Items" matSort>
             <!-- Position Column -->
             <ng-container matColumnDef="Id">
                 <mat-header-cell *matHeaderCellDef mat-sort-header>Id </mat-header-cell>

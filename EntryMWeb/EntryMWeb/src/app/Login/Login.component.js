@@ -30,7 +30,7 @@ var LoginComponent = /** @class */ (function () {
         this.http.get(url)
             .toPromise()
             .then(function (response) {
-            if (response != null) {
+            if (response != null && response.json() != 0) {
                 // this.id = response.json;
                 _this.id = response.json();
                 _this.router.navigate(['home', _this.id]);

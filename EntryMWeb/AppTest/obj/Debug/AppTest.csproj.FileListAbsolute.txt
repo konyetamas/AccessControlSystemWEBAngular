@@ -41,3 +41,9 @@ C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\AppTest\obj\D
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\AppTest\obj\Debug\AppTest.pdb
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\AppTest\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\AppTest\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\AppTest\bin\Debug\Selenium.WebDriverBackedSelenium.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\AppTest\bin\Debug\WebDriver.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\AppTest\bin\Debug\WebDriver.Support.dll
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\AppTest\bin\Debug\Selenium.WebDriverBackedSelenium.xml
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\AppTest\bin\Debug\WebDriver.xml
+C:\Users\Tomi\Source\Repos\AccessControlSystemWEBAngular\EntryMWeb\AppTest\bin\Debug\WebDriver.Support.xml

@@ -22,7 +22,7 @@ namespace AppTest
 
             CompanyModel company = new CompanyModel();
             company = CompanyDAL.GetCompanies().Where(x => x.Address == "testAddress" && x.Id==companyId).FirstOrDefault();
-            Assert.That(company != null, Is.True);
+            Assert.That(company != null, Is.False);
 
         }
 
