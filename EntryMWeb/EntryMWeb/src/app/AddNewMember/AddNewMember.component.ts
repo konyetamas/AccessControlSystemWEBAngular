@@ -15,7 +15,6 @@ import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
 export class AddNewMemberComponent {
 
     constructor(private router: Router, private http: Http, private route: ActivatedRoute, @Inject(MAT_DIALOG_DATA) public data: any) { }
-    //Company: Company;
     companyId: string;
     private sub: any;
     member: Member = {
@@ -27,9 +26,6 @@ export class AddNewMemberComponent {
         Title: "",
         CompanyName: ""
     };
-
-
-
 
     Add() {
         this.member.CompanyId = this.data.id;

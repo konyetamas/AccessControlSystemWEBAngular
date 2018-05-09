@@ -1,60 +1,23 @@
-﻿<!DOCTYPE html>
-<!--<link href="../../../Content/bootstrap.min.css" rel="stylesheet" />-->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/darkly/bootstrap.css" rel="stylesheet">
+﻿
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Home vagyok</title>
-	<meta charset="utf-8" />
+
 </head>
-
-<body class="navContainer">
-    <!--<div class="container mynavbar">
-
-        <ul class="nav mynavbar">
-            <li><a class="nav-link">Company details</a></li>
-            <li><a class="nav-link">Members</a></li>
-            <li><a class="nav-link">Entries</a></li>
-            <li><a class="nav-link">Messages</a></li>
-           
+<body>
+    <div align="center" id="navBlock">
+        <ul style="align-items:center" routerLinkActive="active">
+            <li id="CompanyDetailsButton"><a [routerLink]="['details', id]">Company details</a></li>
+            <li id="MembersButton"><a [routerLink]="['members', id]">Members</a></li>
+            <li id="EntriesButton"><a [routerLink]="['entries', id]">Entries</a></li>
+            <li id="InboxMessagesButton"><a [routerLink]="['messages', id]">Inbox messages</a></li>
+            <li id="OutboxMessagesButton"><a [routerLink]="['outboxmessages', id]">Outbox messages</a></li>
         </ul>
 
-    </div>-->
-    
-<nav class="navbar-fixed-top navbar-dark bg-inverse">
-    <div class="container">
-        <ul class="mynav" routerLinkActive="active">           
-            <li id="CompanyDetailsButton" class="Myli"><a class="nav-link" [routerLink]="['details', id]">Company details</a></li>
-            <li id="MembersButton" class="Myli"><a class="nav-link" [routerLink]="['members', id]">Members</a></li>
-            <li id="EntriesButton" class="Myli"><a class="nav-link"  [routerLink]="['entries', id]">Entries</a></li>
-            <li id="InboxMessagesButton" class="Myli"><a class="nav-link"  [routerLink]="['messages', id]">Inbox messages</a></li>
-            <li id="OutboxMessagesButton" class="Myli"><a class="nav-link"  [routerLink]="['outboxmessages', id]">Outbox messages</a></li>
-        </ul>
+        <router-outlet></router-outlet>
     </div>
-</nav>
-
-
-    <!--<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
-        <div class="container">
-            <a class="navbar-brand">Angular Router</a>
-            <ul class="nav navbar-nav" routerLinkActive="active">
-                <li class="nav-item"><a class="nav-link" routerLink="home">Company details</a></li>
-                <li class="nav-item"><a class="nav-link" routerLink="members">Members</a></li>
-                <li class="nav-item"><a class="nav-link" routerLink="entries">Entries</a></li>
-                <li class="nav-item"><a class="nav-link" routerLink="messages">Messages</a></li>
-            </ul>
-        </div>
-    </nav>-->
-
-    <router-outlet></router-outlet>
-
-    </body>
+</body>
 </html>
-
-
 
 <script src="../../../scripts/jquery-3.0.0.min.js"></script>
 <script src="../../../scripts/bootstrap.min.js"></script>
-
-
-
-<script src="../../../scripts/jquery-3.0.0.min.js"></script>

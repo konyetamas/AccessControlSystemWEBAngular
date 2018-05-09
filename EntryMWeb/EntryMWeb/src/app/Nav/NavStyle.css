@@ -1,67 +1,33 @@
-﻿.Myli{display:inline-block !important;}
-
-.navContainer{
-    background:transparent;
+﻿#navBlock{
+    text-align:center;
+    align-items:center;
 }
 
-.mynavbar {
-	text-align:center;
-}
-.mynavbar .nav {
-	float:none;
-}
-.mynav{
-  text-align:center;
-}
-.mynavbar .nav li {
-	display:inline-block;
-	float:none;
-	margin:0 20px;
-	vertical-align:middle;
-}
-.mynavbar .nav li a {
-	border-radius:10px;
-	background:#669900	 ;
-	color:#fff;
-}
-.mynavbar .nav li a:hover {
-	background:red
-}
-.mynavbar .nav li.mylogo a, .mynavbar .nav li.mylogo a:hover {
-	background:transparent;
-	max-width:150px;
-}
-.mynavbar .nav li.mylogo a img {
-	width:100%;
-	height:auto;
-	vertical-align:middle;
-	display:inline-block;
-}
-.navbar-brand {
-	display:none
-}
-@media screen and (max-width:768px) {
-    .navbar-brand {
-        display: inline;
-    }
-
-    .mynavbar .nav li {
-        display: block;
-        margin: 0;
-    }
-
-        .mynavbar .nav li a {
-            border-radius: 0;
-            display: block;
-            border-bottom: 1px solid #fff;
-        }
-
-    .mynavbar li.mylogo {
-        display: none;
-    }
-
-   
-
-    
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    text-align:center;
+    display:inline-block;
 }
 
+li {
+    float: left;
+    display:block;
+    text-align:center;
+    align-items:center;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}

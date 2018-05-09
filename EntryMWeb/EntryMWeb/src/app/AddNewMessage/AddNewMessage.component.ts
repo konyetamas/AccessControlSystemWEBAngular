@@ -15,7 +15,6 @@ import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
 export class AddNewMessageComponent {
 
     constructor(private router: Router, private http: Http, private route: ActivatedRoute, @Inject(MAT_DIALOG_DATA) public data: any) { }
-    //Company: Company;
     companyId: number;
     private sub: any;
     message: Message = {
@@ -25,9 +24,6 @@ export class AddNewMessageComponent {
         Date: new Date(),
         CompanyId:0
     };
-
-
-
 
     Send() {
         this.message.CompanyId = this.data.companyId;

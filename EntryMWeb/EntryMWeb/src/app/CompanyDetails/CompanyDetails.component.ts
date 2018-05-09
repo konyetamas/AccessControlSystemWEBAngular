@@ -15,16 +15,13 @@ import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
 export class CompanyDetailsComponent implements OnInit {
 
     constructor(private router: Router, private http: Http, private route: ActivatedRoute) { }
-    //Company: Company;
     companyId: number;
     private sub: any;
     company: Company = { Id: "", Name: "", Address: "", Phone: "" };
    
-
     GetDetails() {
 
         const url = "../../../api/company/GetCompanyById?CompanyId=" + this.companyId;
-
 
         this.http.get(url).subscribe(
             (res: Response) => {
@@ -64,7 +61,6 @@ export class CompanyDetailsComponent implements OnInit {
             })
             .catch(() => { alert("Wrong username or password") })
     }
-
 }
 
 export class Company {

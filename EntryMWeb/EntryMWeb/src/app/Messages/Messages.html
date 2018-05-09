@@ -7,27 +7,21 @@
 <body>
     <div class="example-container mat-elevation-z8">
         <mat-table id="InboxMessagesList" #table [dataSource]="Items" matSort>
-            <!-- Position Column -->
+
             <ng-container matColumnDef="Id">
                 <mat-header-cell *matHeaderCellDef mat-sort-header>Id </mat-header-cell>
                 <mat-cell (click)="OpenInboxMessage(element.Id)" *matCellDef="let element"> {{element.Id}} </mat-cell>
             </ng-container>
 
-            <!-- Name Column -->
             <ng-container matColumnDef="Subject">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Subject </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.Subject}} </mat-cell>
             </ng-container>
 
-            <!-- Weight Column -->
             <ng-container matColumnDef="Text">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Text </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.Text}} </mat-cell>
             </ng-container>
-
-            <!-- Symbol Column -->
-           
-           
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>

@@ -8,19 +8,16 @@
     <div class="example-container mat-elevation-z8">
         <mat-table id="EntriesList" #table [dataSource]="Items" matSort>
 
-            <!-- Position Column -->
             <ng-container matColumnDef="Id">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.Id}} </mat-cell>
             </ng-container>
 
-            <!-- Name Column -->
             <ng-container matColumnDef="MemberName">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.MemberName}} </mat-cell>
             </ng-container>
 
-            <!-- Weight Column -->
             <ng-container matColumnDef="EntryDate">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Time </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.EntryDate}} </mat-cell>

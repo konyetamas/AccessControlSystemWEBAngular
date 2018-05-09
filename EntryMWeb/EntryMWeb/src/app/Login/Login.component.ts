@@ -15,22 +15,14 @@ export class LoginComponent {
     id: number;
 
     Login(name: string, password: string) {
-       
-        //let headers = new Headers();
-        //headers.append('Content-Type', 'application/json');
-        //headers.append('UserName', name);
-        //headers.append('Password', password);
 
-        //  let params = new HttpParams().set("UserName", name).set("Password", password);
         const url = "../../../api/user/CheckUserAutenthication?UserName=" + name + "&Password=" + password;
         this.http.get(url)
             .toPromise()
             .then((response: Response) => {
                 if (response != null && response.json()!=0 ) {
-                    // this.id = response.json;
-
                     this.id = response.json();
-                    this.router.navigate(['home', this.id]);
+                    this.router.navigate(['nav', this.id]);
                 }
                 else {
                     alert("Wrong username or password");

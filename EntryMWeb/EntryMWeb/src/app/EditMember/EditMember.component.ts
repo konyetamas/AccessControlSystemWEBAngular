@@ -15,7 +15,6 @@ import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
 export class EditMemberComponent implements OnInit {
 
     constructor(private router: Router, private http: Http, private route: ActivatedRoute, @Inject(MAT_DIALOG_DATA) public data: any) { }
-    //Company: Company;
     memberId: number;
     private sub: any;
     member: Member = {

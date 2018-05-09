@@ -33,7 +33,7 @@ var LoginComponent = /** @class */ (function () {
             if (response != null && response.json() != 0) {
                 // this.id = response.json;
                 _this.id = response.json();
-                _this.router.navigate(['home', _this.id]);
+                _this.router.navigate(['nav', _this.id]);
             }
             else {
                 alert("Wrong username or password");
