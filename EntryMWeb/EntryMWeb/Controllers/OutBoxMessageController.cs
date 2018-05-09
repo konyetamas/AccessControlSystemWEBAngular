@@ -28,8 +28,26 @@ namespace EntryMWeb.Controllers
             return result;
         }
 
+        [HttpGet]
+        [ActionName("GetMessage")]
+        public MessageFromCompanyModel GetMessage(int MessageId, int CompanyId)
+        {
+            MessageFromCompanyModel result = new MessageFromCompanyModel();
+            try
+            {
+                result = MessageDAL.GetMessageFromCompanyById(MessageId, CompanyId);
+            }
+            catch (Exception e)
+            {
 
-      
+            }
+            return result;
+        }
+
+
+
+
+
 
         [HttpPost]
         [ActionName("AddNewMessage")]

@@ -10,7 +10,7 @@
             <!-- Position Column -->
             <ng-container matColumnDef="Id">
                 <mat-header-cell *matHeaderCellDef mat-sort-header>Id </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.Id}} </mat-cell>
+                <mat-cell (click)="OpenMessage(element.Id)" *matCellDef="let element"> {{element.Id}} </mat-cell>
             </ng-container>
 
             <!-- Name Column -->
@@ -35,7 +35,7 @@
 
         <br>
         <br>
-        <button mat-button (click)="openDialog()">Add new message</button>
+        <button style="color:white" (click)="openDialog()" mat-button>Add new message</button>
 
     </div>
 </body>

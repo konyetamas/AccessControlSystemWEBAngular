@@ -15,6 +15,7 @@ require("rxjs/add/operator/toPromise");
 var router_1 = require("@angular/router");
 var material_1 = require("@angular/material");
 var material_2 = require("@angular/material");
+var ReadMessage_component_1 = require("../ReadMessage/ReadMessage.component");
 var MessagesComponent = /** @class */ (function () {
     function MessagesComponent(router, http, route, dialog) {
         this.router = router;
@@ -40,6 +41,16 @@ var MessagesComponent = /** @class */ (function () {
             _this.companyId = +params['id'];
         });
         this.GetMessages();
+    };
+    MessagesComponent.prototype.OpenInboxMessage = function (actualId) {
+        this.dialog.open(ReadMessage_component_1.ReadMessageComponent, {
+            height: '350px',
+            width: '350px',
+            closeOnNavigation: true,
+            data: {
+                id: actualId
+            }
+        });
     };
     __decorate([
         core_1.ViewChild(material_1.MatSort),

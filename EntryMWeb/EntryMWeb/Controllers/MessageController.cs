@@ -45,5 +45,22 @@ namespace EntryMWeb.Controllers
             }
 
         }
+
+
+        [HttpGet]
+        [ActionName("GetMessageFromBuliding")]
+        public MessageToCompanyModel GetMessageFromBuliding(int MessageId)
+        {
+            MessageToCompanyModel result = new MessageToCompanyModel();
+            try
+            {
+                result = MessageDAL.GetMessageFromBuilding(MessageId);
+            }
+            catch (Exception e)
+            {
+
+            }
+            return result;
+        }
     }
 }

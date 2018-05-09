@@ -54,7 +54,7 @@ namespace EntryMWeb.DAL
                                       select y.Name
                                       ).FirstOrDefault();
 
-
+            entryModel.EntryDate = (DateTime)entryDataBase.Time;
             return entryModel;
         }
     }

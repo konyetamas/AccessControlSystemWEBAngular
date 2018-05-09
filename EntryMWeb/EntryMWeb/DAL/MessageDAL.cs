@@ -19,7 +19,7 @@ namespace EntryMWeb.DAL
                 context.MessageFromCompanies.Add(messageDB);
                 context.SaveChanges();
             }
-            catch(Exception e )
+            catch (Exception e)
             {
 
             }
@@ -35,11 +35,11 @@ namespace EntryMWeb.DAL
             try
             {
                 List<MessageFromBuilding> messagesDB = (from x in context.MessagesOfCompanies
-                                                      from y in context.MessageFromBuildings
-                                                      where x.CompanyId == CompanyId
-                                                      where x.MessageFromBuildingId == y.Id
-                                                      select y).ToList();
-                                                                     
+                                                        from y in context.MessageFromBuildings
+                                                        where x.CompanyId == CompanyId
+                                                        where x.MessageFromBuildingId == y.Id
+                                                        select y).ToList();
+
                 List<MessageToCompanyModel> messagesModel = new List<MessageToCompanyModel>();
                 foreach (MessageFromBuilding item in messagesDB)
                 {
@@ -77,6 +77,37 @@ namespace EntryMWeb.DAL
             return messagesModels;
         }
 
+
+        public static MessageFromCompanyModel GetMessageFromCompanyById(int messageId, int CompanyId)
+        {
+            AccessControlSystemEntities context = new AccessControlSystemEntities();
+            try
+            {
+                MessageFromCompany message = context.MessageFromCompanies.Where(x => x.CompanyId == CompanyId && x.Id == messageId).FirstOrDefault();
+                return MapToMemberMessageFromCompanyModel(message, context);
+            }
+            catch (Exception e)
+            {
+
+            }
+            return null;
+        }
+
+        public static MessageToCompanyModel GetMessageFromBuilding(int messageId)
+        {
+            AccessControlSystemEntities context = new AccessControlSystemEntities();
+            try
+            {
+                MessageFromBuilding message = context.MessageFromBuildings.Where(x => x.Id == messageId).FirstOrDefault();
+                return MapToMessageToCompanyModel(message, context);
+            }
+            catch (Exception e)
+            {
+
+            }
+            return null;
+        }
+
         private static MessageFromCompanyModel MapToMemberMessageFromCompanyModel(MessageFromCompany messageFromCompanyDB, AccessControlSystemEntities context)
         {
             MessageFromCompanyModel messageFormCompany = new MessageFromCompanyModel();
@@ -84,14 +115,16 @@ namespace EntryMWeb.DAL
             messageFormCompany.Text = messageFromCompanyDB.Value;
             messageFormCompany.Subject = messageFromCompanyDB.Subject;
             messageFormCompany.CompanyName = (from x in context.MessageFromCompanies
-                                       where x.Id == messageFormCompany.Id
-                                       from y in context.Companies
-                                       where y.Id == x.CompanyId
-                                       select y.Name
+                                              where x.Id == messageFormCompany.Id
+                                              from y in context.Companies
+                                              where y.Id == x.CompanyId
+                                              select y.Name
                                       ).FirstOrDefault();
 
             return messageFormCompany;
         }
+
+   
 
 
         private static MessageToCompanyModel MapToMessageToCompanyModel(MessageFromBuilding messageFromBulidingDB, AccessControlSystemEntities context)

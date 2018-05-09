@@ -16,6 +16,7 @@ var router_1 = require("@angular/router");
 var material_1 = require("@angular/material");
 var material_2 = require("@angular/material");
 var AddNewMessage_component_1 = require("../AddNewMessage/AddNewMessage.component");
+var ReadMessage_component_1 = require("../ReadMessage/ReadMessage.component");
 var OutBoxMessagesComponent = /** @class */ (function () {
     function OutBoxMessagesComponent(router, http, route, dialog) {
         this.router = router;
@@ -43,10 +44,21 @@ var OutBoxMessagesComponent = /** @class */ (function () {
     };
     OutBoxMessagesComponent.prototype.openDialog = function () {
         this.dialog.open(AddNewMessage_component_1.AddNewMessageComponent, {
+            height: '400px',
+            width: '350px',
+            closeOnNavigation: true,
+            data: {
+                companyId: this.companyId
+            }
+        });
+    };
+    OutBoxMessagesComponent.prototype.OpenMessage = function (actualId) {
+        this.dialog.open(ReadMessage_component_1.ReadMessageComponent, {
             height: '350px',
             width: '350px',
             closeOnNavigation: true,
             data: {
+                id: actualId,
                 companyId: this.companyId
             }
         });

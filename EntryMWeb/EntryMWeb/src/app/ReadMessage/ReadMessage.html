@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+    <table class="readmessage-form" align="center">
+        <tr>
+            <td align="center">
+                <mat-form-field class="fieldStlye">
+                    <input readonly matInput [(ngModel)]="message.Subject" placeholder="Subject">
+                </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="center">
+                <textarea readonly style="width:250px; height:200px;" [(ngModel)]="message.Text"></textarea>
+
+
+            </td>
+        </tr>
+   
+    </table>
+</body>
+</html>
+
+<script src="../../../scripts/jquery-3.0.0.min.js"></script>

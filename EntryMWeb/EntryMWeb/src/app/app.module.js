@@ -21,6 +21,7 @@ var AddNewMember_component_1 = require("./AddNewMember/AddNewMember.component");
 var EditMember_component_1 = require("./EditMember/EditMember.component");
 var OutBoxMessages_component_1 = require("./OutBoxMessages/OutBoxMessages.component");
 var AddNewMessage_component_1 = require("./AddNewMessage/AddNewMessage.component");
+var ReadMessage_component_1 = require("./ReadMessage/ReadMessage.component");
 var forms_1 = require("@angular/forms");
 var animations_1 = require("@angular/platform-browser/animations");
 var animations_2 = require("@angular/platform-browser/animations");
@@ -105,6 +106,10 @@ var AppModule = /** @class */ (function () {
                             {
                                 path: 'addnewmessage',
                                 component: AddNewMessage_component_1.AddNewMessageComponent
+                            },
+                            {
+                                path: 'readmessage',
+                                component: ReadMessage_component_1.ReadMessageComponent
                             }
                         ]
                     }
@@ -119,7 +124,7 @@ var AppModule = /** @class */ (function () {
                 material_2.MatInputModule,
                 material_2.MatFormFieldModule,
             ],
-            declarations: [app_component_1.AppComponent, OutBoxMessages_component_1.OutBoxMessagesComponent, AddNewMessage_component_1.AddNewMessageComponent, EditMember_component_1.EditMemberComponent, CompanyDetails_component_1.CompanyDetailsComponent, AddNewMember_component_1.AddNewMemberComponent, StartPage_component_1.StartPageComponent, Home_component_1.HomeComponent, Nav_component_1.NavComponent, Login_component_1.LoginComponent, Members_component_1.MembersComponent, Messages_component_1.MessagesComponent, Entries_component_1.EntriesComponent],
+            declarations: [app_component_1.AppComponent, ReadMessage_component_1.ReadMessageComponent, OutBoxMessages_component_1.OutBoxMessagesComponent, AddNewMessage_component_1.AddNewMessageComponent, EditMember_component_1.EditMemberComponent, CompanyDetails_component_1.CompanyDetailsComponent, AddNewMember_component_1.AddNewMemberComponent, StartPage_component_1.StartPageComponent, Home_component_1.HomeComponent, Nav_component_1.NavComponent, Login_component_1.LoginComponent, Members_component_1.MembersComponent, Messages_component_1.MessagesComponent, Entries_component_1.EntriesComponent],
             bootstrap: [app_component_1.AppComponent]
         })
         //@NgModule({

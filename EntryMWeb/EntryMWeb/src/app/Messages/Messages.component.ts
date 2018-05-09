@@ -6,6 +6,7 @@ import { MatTableDataSource, MatSort } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 import { MatTableModule, MatDialog } from '@angular/material';
 import { HttpParams, HttpClient } from '@angular/common/http';
+import { ReadMessageComponent } from '../ReadMessage/ReadMessage.component';
 
 @Component({
     selector: 'app-messages',
@@ -49,10 +50,21 @@ export class MessagesComponent implements OnInit {
         this.GetMessages();
     }
 
+    OpenInboxMessage(actualId: number) {
+        this.dialog.open(ReadMessageComponent, {
+            height: '350px',
+            width: '350px',
+            closeOnNavigation: true,
+            data: {
+                id: actualId
+            }
+        });
+    }
+
 }
 
 export class Message {
-    Id: string;
+    Id: number;
     Subject: string;
     Text: string;
 }

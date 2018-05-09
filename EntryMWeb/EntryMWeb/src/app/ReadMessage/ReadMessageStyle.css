@@ -1,4 +1,5 @@
-﻿.company-form {
+﻿.readmessage-form {
+  width:300px;
   position:center;
   display:block;
   align-content:center;
@@ -8,5 +9,5 @@
 
 .fieldStlye {
   width: 200px;
-  color:white;
+
 }

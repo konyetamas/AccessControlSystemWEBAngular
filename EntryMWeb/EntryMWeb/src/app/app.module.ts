@@ -15,8 +15,7 @@ import { AddNewMemberComponent } from './AddNewMember/AddNewMember.component';
 import { EditMemberComponent } from './EditMember/EditMember.component';
 import { OutBoxMessagesComponent } from './OutBoxMessages/OutBoxMessages.component';
 import { AddNewMessageComponent } from './AddNewMessage/AddNewMessage.component';
-
-
+import { ReadMessageComponent } from './ReadMessage/ReadMessage.component';
 
 import { FormsModule } from '@angular/forms';
 
@@ -104,6 +103,10 @@ import {
                     {
                         path: 'addnewmessage',
                         component: AddNewMessageComponent
+                    },
+                    {
+                        path: 'readmessage',
+                        component: ReadMessageComponent
                     }
 
                 ]
@@ -121,7 +124,7 @@ import {
         MatInputModule,
         MatFormFieldModule,
     ],
-    declarations: [AppComponent, OutBoxMessagesComponent, AddNewMessageComponent, EditMemberComponent, CompanyDetailsComponent, AddNewMemberComponent, StartPageComponent, HomeComponent, NavComponent, LoginComponent, MembersComponent, MessagesComponent, EntriesComponent],
+    declarations: [AppComponent, ReadMessageComponent, OutBoxMessagesComponent, AddNewMessageComponent, EditMemberComponent, CompanyDetailsComponent, AddNewMemberComponent, StartPageComponent, HomeComponent, NavComponent, LoginComponent, MembersComponent, MessagesComponent, EntriesComponent],
     bootstrap: [AppComponent]
 })
 

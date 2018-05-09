@@ -196,6 +196,8 @@
     <Content Include="src\app\Nav\NavStyle2.css" />
     <Content Include="src\app\OutBoxMessages\OutBoxMessages.html" />
     <Content Include="src\app\OutBoxMessages\OutBoxMessagesStyle.css" />
+    <Content Include="src\app\ReadMessage\ReadMessage.html" />
+    <Content Include="src\app\ReadMessage\ReadMessageStyle.css" />
     <Content Include="src\app\StartPage\StartPage.html" />
     <Content Include="src\app\StartPage\StartPageStyle.css" />
     <Content Include="src\favicon.ico" />
@@ -298,6 +300,8 @@
     <TypeScriptCompile Include="src\app\Messages\Messages.component.ts" />
     <TypeScriptCompile Include="src\app\OutBoxMessages\OutBoxMessages.component.spec.ts" />
     <TypeScriptCompile Include="src\app\OutBoxMessages\OutBoxMessages.component.ts" />
+    <TypeScriptCompile Include="src\app\ReadMessage\ReadMessage.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\ReadMessage\ReadMessage.component.ts" />
     <TypeScriptCompile Include="src\app\StartPage\StartPage.component.spec.ts" />
     <TypeScriptCompile Include="src\app\StartPage\StartPage.component.ts" />
     <TypeScriptCompile Include="src\main.ts" />

@@ -28,7 +28,7 @@ var EntriesComponent = /** @class */ (function () {
         var myHeaders = new http_1.Headers();
         myHeaders.append('Content-Type', 'application/json');
         myHeaders.append('CompanyId', '1');
-        var url = "../../../api/entry/GetEntriesByCompanyId?CompanyId=" + this.companyId;
+        var url = "../../../api/entry/GetEntries?CompanyId=" + this.companyId;
         this.http.get(url).subscribe(function (res) {
             _this.Items = res.json();
         });

@@ -11,8 +11,5 @@
 }
 
 .mat-header-cell.mat-sort-header-sorted {
-  color: black;
+  /*color: black;*/
 }
- body {
-        background:none;
-    }

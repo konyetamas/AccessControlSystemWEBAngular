@@ -29,7 +29,7 @@ export class EntriesComponent implements OnInit {
         let myHeaders = new Headers();
         myHeaders.append('Content-Type', 'application/json');
         myHeaders.append('CompanyId', '1');
-        const url = "../../../api/entry/GetEntriesByCompanyId?CompanyId="+ this.companyId;
+        const url = "../../../api/entry/GetEntries?CompanyId="+ this.companyId;
         this.http.get(url).subscribe(
             (res: Response) => {
                 this.Items = res.json();

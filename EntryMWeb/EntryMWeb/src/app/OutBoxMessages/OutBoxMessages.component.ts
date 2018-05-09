@@ -7,6 +7,8 @@ import { CdkTableModule } from '@angular/cdk/table';
 import { MatTableModule, MatDialog } from '@angular/material';
 import { HttpParams, HttpClient } from '@angular/common/http';
 import { AddNewMessageComponent } from '../AddNewMessage/AddNewMessage.component';
+import { ReadMessageComponent } from '../ReadMessage/ReadMessage.component';
+
 @Component({
     selector: 'app-outboxmessages',
     templateUrl: './OutBoxMessages.html',
@@ -45,10 +47,22 @@ export class OutBoxMessagesComponent implements OnInit {
 
     openDialog() {
         this.dialog.open(AddNewMessageComponent, {
+            height: '400px',
+            width: '350px',
+            closeOnNavigation: true,
+            data: {
+                companyId: this.companyId
+            }
+        });
+    }
+
+    OpenMessage(actualId: number) {
+        this.dialog.open(ReadMessageComponent, {
             height: '350px',
             width: '350px',
             closeOnNavigation: true,
             data: {
+                id: actualId,
                 companyId: this.companyId
             }
         });

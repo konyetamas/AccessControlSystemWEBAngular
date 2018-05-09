@@ -6,7 +6,6 @@
   vertical-align:central;
   align-items:center;
  /*background-image: url('../Images/popupBG.jpg');*/
- background-color:white;
 }
 
 .fieldStlye {
@@ -17,8 +16,4 @@
       background-color: grey;
       width: 250px;
       height: 250px
-}
-
-body{
-    background-image: url('../Images/popupBG.jpg');
 }

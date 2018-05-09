@@ -10,7 +10,7 @@
             <!-- Position Column -->
             <ng-container matColumnDef="Id">
                 <mat-header-cell *matHeaderCellDef mat-sort-header>Id </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.Id}} </mat-cell>
+                <mat-cell (click)="OpenInboxMessage(element.Id)" *matCellDef="let element"> {{element.Id}} </mat-cell>
             </ng-container>
 
             <!-- Name Column -->
@@ -38,4 +38,3 @@
 
 
 <script src="../../../scripts/jquery-3.0.0.min.js"></script>
-<link href="/node_modules/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
