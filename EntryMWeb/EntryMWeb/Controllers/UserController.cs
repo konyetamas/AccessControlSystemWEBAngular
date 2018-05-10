@@ -44,7 +44,7 @@ namespace EntryMWeb.Controllers
             }         
             catch (Exception e)
             {
-
+                throw new Exception(e.Message);
             }
             return result==null ? 0: result.CompanyId;
         }

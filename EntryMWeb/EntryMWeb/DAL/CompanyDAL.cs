@@ -28,7 +28,7 @@ namespace EntryMWeb.DAL
             }
             catch (Exception e)
             {
-
+                throw new Exception(e.Message);
             }
             return null;
         }
@@ -44,7 +44,7 @@ namespace EntryMWeb.DAL
             }
             catch (Exception e)
             {
-
+                throw new Exception(e.Message);
             }
             return null;
         }
@@ -66,7 +66,7 @@ namespace EntryMWeb.DAL
             }
             catch (Exception e)
             {
-
+                throw new Exception(e.Message);
             }
         }
         private CompanyModel MapToCompanyModel(Company companyDataBase, AccessControlSystemEntities context)

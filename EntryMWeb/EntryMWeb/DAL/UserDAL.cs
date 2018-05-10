@@ -59,7 +59,7 @@ namespace EntryMWeb.DAL
             }
             catch (Exception e)
             {
-
+                throw new Exception(e.Message);
             }
             return null;
         }

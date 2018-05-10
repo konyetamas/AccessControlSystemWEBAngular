@@ -23,7 +23,7 @@ namespace EntryMWeb.Controllers
             }
             catch(Exception e)
             {
-
+                throw new Exception(e.Message);
             }
             return result;
         }
@@ -38,7 +38,7 @@ namespace EntryMWeb.Controllers
             }
             catch (Exception e)
             {
-
+                throw new Exception(e.Message);
             }
             return null;
         }
@@ -54,7 +54,7 @@ namespace EntryMWeb.Controllers
             }
             catch (Exception e)
             {
-
+                throw new Exception(e.Message);
             }
         }
 
